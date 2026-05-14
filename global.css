@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS variables are set at runtime by ThemeProvider via `vars()` from nativewind.
+   Defaults here are for web fallback (day palette, accent ambra). */
+:root {
+  --l-bg: #faf6f0;
+  --l-surface: #ffffff;
+  --l-surface-alt: #f3ede3;
+  --l-border: rgba(60, 40, 20, 0.08);
+  --l-border-strong: rgba(60, 40, 20, 0.16);
+  --l-text: #1a1512;
+  --l-text-muted: rgba(26, 21, 18, 0.6);
+  --l-text-faint: rgba(26, 21, 18, 0.4);
+  --l-chip: #ede4d3;
+  --l-success: #4a7c3a;
+  --l-danger: #b94a3a;
+  --l-accent: #f59e42;
+  --l-accent-glow: #ffc278;
+  --l-accent-ink: #2a1a08;
+}

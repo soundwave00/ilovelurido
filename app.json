@@ -1,0 +1,62 @@
+{
+  "expo": {
+    "name": "iLoveLurido",
+    "slug": "ilovelurido",
+    "scheme": "ilovelurido",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.ilovelurido.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "iLoveLurido usa la tua posizione per mostrarti i baracchini vicini.",
+        "NSCameraUsageDescription": "Per aggiungere foto ai luridi e alle recensioni.",
+        "NSPhotoLibraryUsageDescription": "Per selezionare foto da aggiungere ai luridi e alle recensioni."
+      },
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.ilovelurido.app",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "REPLACE_WITH_ANDROID_GOOGLE_MAPS_KEY"
+        }
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-location",
+      "expo-notifications",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "iLoveLurido vuole accedere alle tue foto per aggiungerle ai luridi.",
+          "cameraPermission": "iLoveLurido vuole accedere alla fotocamera per scattare foto dei luridi."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      }
+    }
+  }
+}
