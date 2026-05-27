@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
   FlatList,
   Image,
+  Keyboard,
   Pressable,
   ScrollView,
   Text,
@@ -13,14 +14,14 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import MapView, { MapMarker, PROVIDER_GOOGLE, Region } from 'react-native-maps';
 import * as ImagePicker from 'expo-image-picker';
+import * as Location from 'expo-location';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { router } from 'expo-router';
-import { Platform } from 'react-native';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { ChevronLeft, ChevronRight, MapPin, Plus, X } from 'lucide-react-native';
+import { ChevronLeft, ChevronRight, MapPin, Navigation, Plus, Search, X } from 'lucide-react-native';
 import { LFormField } from '@/components/LFormField';
 import { LButton } from '@/components/LButton';
 import { LPin } from '@/components/LPin';
@@ -31,6 +32,7 @@ import { uploadImage } from '@/lib/utils/imageUpload';
 import { useAuthStore } from '@/lib/store/useAuthStore';
 import { useLocation } from '@/hooks/useLocation';
 import { useTheme } from '@/lib/theme/ThemeProvider';
+import { ACCENTS } from '@/lib/theme/tokens';
 import { MILANO_REGION } from '@/lib/constants/maps';
 
 const DAY_KEYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'] as const;
@@ -61,7 +63,7 @@ type Step = 0 | 1 | 2 | 3;
 const STEP_LABELS = ['Posizione', 'Info', 'Orari', 'Foto'];
 
 export default function AddScreen() {
-  const { palette } = useTheme();
+  const { palette, accent } = useTheme();
   const { profile } = useAuthStore();
   const { location } = useLocation(true);
   const qc = useQueryClient();
@@ -141,7 +143,27 @@ export default function AddScreen() {
     onError: () => Alert.alert('Errore', 'Impossibile inviare la proposta. Riprova.'),
   });
 
-  const goNext = () => {
+  const watchedName = watch('name');
+  const watchedNeighborhood = watch('neighborhood');
+  const canContinue = step !== 1 || (watchedName.length >= 3 && watchedNeighborhood.length >= 2);
+
+  const goNext = async () => {
+    if (step === 0) {
+      const { lat, lng, address, neighborhood } = getValues();
+      if (!address && !neighborhood) {
+        try {
+          const [geo] = await Location.reverseGeocodeAsync({ latitude: lat, longitude: lng });
+          if (geo) {
+            const street = [geo.street, geo.streetNumber].filter(Boolean).join(' ');
+            if (street) setValue('address', street);
+            const hood = geo.district ?? geo.subregion ?? geo.city ?? '';
+            if (hood) setValue('neighborhood', hood);
+          }
+        } catch {
+          // ignore — user can fill manually
+        }
+      }
+    }
     if (step < 3) setStep((s) => (s + 1) as Step);
   };
   const goBack = () => {
@@ -208,7 +230,7 @@ export default function AddScreen() {
 
       {/* Step content */}
       <View style={{ flex: 1 }}>
-        {step === 0 && <StepPosition control={control} watch={watch} setValue={setValue} />}
+        {step === 0 && <StepPosition control={control} watch={watch} setValue={setValue} location={location} />}
         {step === 1 && <StepInfo control={control} errors={errors} />}
         {step === 2 && <StepHours control={control} watch={watch} setValue={setValue} />}
         {step === 3 && <StepPhotos watch={watch} setValue={setValue} />}
@@ -218,10 +240,10 @@ export default function AddScreen() {
       <View style={{ paddingHorizontal: 16, paddingBottom: footerPaddingBottom, paddingTop: 8 }}>
         <LButton
           label={step < 3 ? 'Continua' : 'Proponi alla community'}
-          onPress={step < 3 ? goNext : onFinalSubmit}
+          onPress={step < 3 ? () => { void goNext(); } : onFinalSubmit}
           loading={isPending}
-          disabled={isPending}
-          leftIcon={step < 3 ? <ChevronRight size={18} color={palette.bg} /> : undefined}
+          disabled={isPending || !canContinue}
+          leftIcon={step < 3 ? <ChevronRight size={18} color={ACCENTS[accent].ink} /> : undefined}
         />
       </View>
     </SafeAreaView>
@@ -232,20 +254,146 @@ function StepPosition({
   control,
   watch,
   setValue,
+  location,
 }: {
   control: ReturnType<typeof useForm<AddForm>>['control'];
   watch: ReturnType<typeof useForm<AddForm>>['watch'];
   setValue: ReturnType<typeof useForm<AddForm>>['setValue'];
+  location: Location.LocationObject | null;
 }) {
-  const { palette, mode } = useTheme();
+  const { palette } = useTheme();
   const lat = watch('lat');
   const lng = watch('lng');
+  const mapRef = useRef<MapView>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searching, setSearching] = useState(false);
+  const centeredRef = useRef(false);
+
+  useEffect(() => {
+    if (location && !centeredRef.current) {
+      centeredRef.current = true;
+      const { latitude, longitude } = location.coords;
+      setValue('lat', latitude);
+      setValue('lng', longitude);
+      mapRef.current?.animateToRegion(
+        { latitude, longitude, latitudeDelta: 0.01, longitudeDelta: 0.01 },
+        600,
+      );
+    }
+  }, [location, setValue]);
+
+  const handleSearch = async () => {
+    const q = searchQuery.trim();
+    if (!q) return;
+    Keyboard.dismiss();
+    setSearching(true);
+    try {
+      const results = await Location.geocodeAsync(q);
+      const first = results[0];
+      if (first) {
+        setValue('lat', first.latitude);
+        setValue('lng', first.longitude);
+        mapRef.current?.animateToRegion(
+          { latitude: first.latitude, longitude: first.longitude, latitudeDelta: 0.005, longitudeDelta: 0.005 },
+          600,
+        );
+      } else {
+        Alert.alert('Nessun risultato', 'Indirizzo non trovato. Prova con un termine più specifico.');
+      }
+    } catch {
+      Alert.alert('Errore', 'Ricerca non disponibile. Riprova.');
+    } finally {
+      setSearching(false);
+    }
+  };
+
+  const goToMyLocation = () => {
+    if (!location) return;
+    const { latitude, longitude } = location.coords;
+    setValue('lat', latitude);
+    setValue('lng', longitude);
+    mapRef.current?.animateToRegion(
+      { latitude, longitude, latitudeDelta: 0.01, longitudeDelta: 0.01 },
+      600,
+    );
+  };
 
   return (
     <View style={{ flex: 1 }}>
+      {/* Search bar overlay */}
+      <View
+        style={{
+          position: 'absolute',
+          top: 12,
+          left: 12,
+          right: 12,
+          zIndex: 10,
+          flexDirection: 'row',
+          gap: 8,
+        }}
+      >
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            alignItems: 'center',
+            backgroundColor: palette.surface,
+            borderRadius: 12,
+            paddingHorizontal: 12,
+            gap: 8,
+            height: 44,
+            shadowColor: '#000',
+            shadowOpacity: 0.08,
+            shadowRadius: 8,
+            shadowOffset: { width: 0, height: 2 },
+            elevation: 4,
+          }}
+        >
+          <Search size={16} color={palette.textMuted} />
+          <TextInput
+            value={searchQuery}
+            onChangeText={setSearchQuery}
+            placeholder="Cerca via, indirizzo…"
+            placeholderTextColor={palette.textFaint}
+            style={{ flex: 1, fontSize: 14, color: palette.text }}
+            returnKeyType="search"
+            onSubmitEditing={handleSearch}
+          />
+          {searching ? (
+            <ActivityIndicator size="small" color={palette.textMuted} />
+          ) : searchQuery.length > 0 ? (
+            <Pressable onPress={() => setSearchQuery('')} hitSlop={8}>
+              <X size={16} color={palette.textMuted} />
+            </Pressable>
+          ) : null}
+        </View>
+        {location && (
+          <Pressable
+            onPress={goToMyLocation}
+            accessibilityLabel="Vai alla mia posizione"
+            style={{
+              backgroundColor: palette.surface,
+              borderRadius: 12,
+              width: 44,
+              height: 44,
+              alignItems: 'center',
+              justifyContent: 'center',
+              shadowColor: '#000',
+              shadowOpacity: 0.08,
+              shadowRadius: 8,
+              shadowOffset: { width: 0, height: 2 },
+              elevation: 4,
+            }}
+          >
+            <Navigation size={18} color={palette.text} />
+          </Pressable>
+        )}
+      </View>
+
       <MapView
+        ref={mapRef}
         style={{ flex: 1 }}
-        provider={Platform.OS === 'android' ? PROVIDER_GOOGLE : undefined}
+        provider={PROVIDER_GOOGLE}
         initialRegion={{ latitude: lat, longitude: lng, latitudeDelta: 0.01, longitudeDelta: 0.01 }}
         onPress={(e) => {
           setValue('lat', e.nativeEvent.coordinate.latitude);
@@ -263,9 +411,10 @@ function StepPosition({
             setValue('lng', e.nativeEvent.coordinate.longitude);
           }}
         >
-          <LPin variant="pill" status="open" selected />
+          <LPin variant="pill" status="open" />
         </MapMarker>
       </MapView>
+
       <View
         style={{
           position: 'absolute',
