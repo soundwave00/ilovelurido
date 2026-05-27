@@ -293,6 +293,7 @@ export default function MapScreen() {
                 placeholderTextColor={palette.textFaint}
                 style={{ flex: 1, fontSize: 14, color: palette.text }}
                 returnKeyType="search"
+                autoFocus
               />
               {query.length > 0 && (
                 <Pressable
