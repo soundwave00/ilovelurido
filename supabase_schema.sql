@@ -165,12 +165,34 @@ left join public.reviews r on r.lurido_id = l.id
 group by l.id;
 
 -- funzione per distanza-query
-create or replace function public.nearby_luridi(lat double precision, lng double precision, radius_m integer default 2000)
-returns setof public.luridi as $$
-  select * from public.luridi
-  where status = 'approved'
-    and st_dwithin(location, st_makepoint(lng, lat)::geography, radius_m)
-  order by location <-> st_makepoint(lng, lat)::geography
+create or replace function public.nearby_luridi(
+  lat double precision,
+  lng double precision,
+  radius_m integer default 2000
+)
+returns table (
+  id uuid, name text, slug text, description text, address text,
+  neighborhood text, phone text,
+  lat float8, lng float8,
+  hours jsonb, status lurido_status, temp_closed boolean,
+  rejection_reason text,
+  added_by uuid, approved_by uuid, approved_at timestamptz,
+  created_at timestamptz, updated_at timestamptz
+) as $$
+  select
+    l.id, l.name, l.slug, l.description, l.address,
+    l.neighborhood, l.phone,
+    ST_Y(l.location::geometry) as lat,
+    ST_X(l.location::geometry) as lng,
+    l.hours, l.status, l.temp_closed,
+    l.rejection_reason,
+    l.added_by, l.approved_by, l.approved_at,
+    l.created_at, l.updated_at
+  from public.luridi l
+  where l.status = 'approved'
+    and st_dwithin(l.location, st_makepoint(lng, lat)::geography, radius_m)
+  order by l.location <-> st_makepoint(lng, lat)::geography
+  limit 50;
 $$ language sql stable;
 
 -- ───────────────────────────────── RLS

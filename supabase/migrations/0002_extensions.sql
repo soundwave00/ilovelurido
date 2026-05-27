@@ -163,16 +163,33 @@ end $$ language plpgsql security definer;
 
 -- ───────────────────────────────── RPC search testuale
 create or replace function public.search_luridi(q text, limit_n int default 30)
-returns setof public.luridi as $$
-  select * from public.luridi
-   where status = 'approved'
-     and (
-       name         ilike '%' || q || '%' or
-       neighborhood ilike '%' || q || '%' or
-       address      ilike '%' || q || '%' or
-       description  ilike '%' || q || '%'
-     )
-   limit limit_n;
+returns table (
+  id uuid, name text, slug text, description text, address text,
+  neighborhood text, phone text,
+  lat float8, lng float8,
+  hours jsonb, status lurido_status, temp_closed boolean,
+  rejection_reason text,
+  added_by uuid, approved_by uuid, approved_at timestamptz,
+  created_at timestamptz, updated_at timestamptz
+) as $$
+  select
+    l.id, l.name, l.slug, l.description, l.address,
+    l.neighborhood, l.phone,
+    ST_Y(l.location::geometry) as lat,
+    ST_X(l.location::geometry) as lng,
+    l.hours, l.status, l.temp_closed,
+    l.rejection_reason,
+    l.added_by, l.approved_by, l.approved_at,
+    l.created_at, l.updated_at
+  from public.luridi l
+  where l.status = 'approved'
+    and (
+      l.name         ilike '%' || q || '%' or
+      l.neighborhood ilike '%' || q || '%' or
+      l.address      ilike '%' || q || '%' or
+      l.description  ilike '%' || q || '%'
+    )
+  limit limit_n;
 $$ language sql stable;
 
 -- ───────────────────────────────── Realtime publication
