@@ -245,6 +245,18 @@ brace:   base #d97706  glow #f39537  ink #2a1608
 
 Schema completo in `supabase_schema.sql`. Tabelle principali: `users`, `luridi` (status: `pending|approved|rejected`), `reviews`, `photos`, `dishes`, `dish_votes`, `notifications`, `reports`. RLS attiva su tutte.
 
+### Seed dati reali
+
+`supabase_seed.sql` contiene 15 luridi reali di Milano con coordinate verificate, orari e piatti signature (tutti `status=approved`, visibili subito in mappa). Eseguilo una volta dal Supabase SQL editor dopo lo schema.
+
+Per scoprire altri luridi via Google Places API (one-shot):
+
+```bash
+GOOGLE_PLACES_API_KEY=<chiave_server> node scripts/find-luridi.mjs
+# Output: scripts/luridi_found_clean.json + scripts/luridi_seed_clean.sql
+# Review manuale necessaria prima di importare
+```
+
 ```bash
 # Genera tipi TypeScript dal DB live
 npx supabase gen types typescript --project-id=YOUR_PROJECT_ID > src/types/db.ts
