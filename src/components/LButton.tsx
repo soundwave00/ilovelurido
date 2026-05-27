@@ -33,8 +33,8 @@ const VARIANT_STYLES: Record<LButtonVariant, { wrap: string; text: string }> = {
 };
 
 const SIZE_STYLES: Record<LButtonSize, { wrap: string; text: string }> = {
-  md: { wrap: 'h-11 px-4 rounded-l-md', text: 'text-[15px]' },
-  lg: { wrap: 'h-14 px-5 rounded-l-lg', text: 'text-[17px]' },
+  md: { wrap: 'h-11 px-4 rounded-md', text: 'text-[15px]' },
+  lg: { wrap: 'h-14 px-5 rounded-lg', text: 'text-[17px]' },
 };
 
 export function LButton({

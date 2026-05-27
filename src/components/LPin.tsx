@@ -76,20 +76,43 @@ export function LPin({ variant = 'pill', status = 'open', selected }: Props) {
 
   // Default: pill/teardrop
   return (
-    <View className={cn('items-center', scaleClass)}>
+    <View
+      collapsable={false}
+      style={{
+        alignItems: 'center',
+        padding: 6,
+        transform: selected ? [{ scale: 1.25 }] : [],
+      }}
+    >
       <View
-        className="px-[10px] h-8 rounded-full flex-row items-center"
-        style={{ backgroundColor: base }}
+        style={{
+          paddingHorizontal: 10,
+          height: 32,
+          borderRadius: 16,
+          flexDirection: 'row',
+          alignItems: 'center',
+          backgroundColor: base,
+        }}
       >
         <View
-          className="w-2 h-2 rounded-full mr-[6px]"
-          style={{ backgroundColor: ink }}
+          style={{
+            width: 8,
+            height: 8,
+            borderRadius: 4,
+            marginRight: 6,
+            backgroundColor: ink,
+          }}
         />
         <Text style={{ color: ink, fontSize: 12, fontWeight: '600' }}>lurido</Text>
       </View>
       <View
-        className="w-2 h-2 rotate-45 -mt-[4px]"
-        style={{ backgroundColor: base }}
+        style={{
+          width: 8,
+          height: 8,
+          backgroundColor: base,
+          transform: [{ rotate: '45deg' }],
+          marginTop: -4,
+        }}
       />
     </View>
   );
