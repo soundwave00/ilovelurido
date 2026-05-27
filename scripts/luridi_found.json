@@ -1,0 +1,1522 @@
+[
+  {
+    "placeId": "ChIJL_Nc9E3BhkcRJjH2ao-Mu4w",
+    "name": "Chiosco al Politico",
+    "address": "Piazza Castello, 5, 20121 Milano MI",
+    "neighborhood": "Sempione",
+    "phone": "327 766 5481",
+    "lat": 45.4688188,
+    "lng": 9.180332,
+    "hours": {
+      "sun": [
+        "10:30",
+        "00:00"
+      ],
+      "mon": [
+        "10:30",
+        "00:00"
+      ],
+      "tue": [
+        "10:30",
+        "00:00"
+      ],
+      "wed": [
+        "10:30",
+        "00:00"
+      ],
+      "thu": [
+        "10:30",
+        "00:00"
+      ],
+      "fri": [
+        "10:30",
+        "00:00"
+      ],
+      "sat": [
+        "10:30",
+        "00:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.6,
+    "ratingsTotal": 1082
+  },
+  {
+    "placeId": "ChIJY2EezyDEhkcRka1DlZjhkmw",
+    "name": "Al Chiosco Pandy E Mucca",
+    "address": "angolo, Piazzale Libia, Viale Lazio, 20135 Milano MI",
+    "neighborhood": "Porta Vittoria",
+    "phone": "02 9115 4015",
+    "lat": 45.4548651,
+    "lng": 9.2090839,
+    "hours": {
+      "mon": [
+        "17:00",
+        "02:00"
+      ],
+      "tue": [
+        "17:00",
+        "02:00"
+      ],
+      "wed": [
+        "17:00",
+        "02:00"
+      ],
+      "thu": [
+        "17:00",
+        "02:00"
+      ],
+      "fri": [
+        "17:00",
+        "04:00"
+      ],
+      "sat": [
+        "17:00",
+        "04:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.5,
+    "ratingsTotal": 322
+  },
+  {
+    "placeId": "ChIJ_y7QmgjHhkcRFRuX-En54nM",
+    "name": "CHIOSCO VENA",
+    "address": "Via Cadore, 3, 20135 Milano MI",
+    "neighborhood": "Porta Vittoria",
+    "phone": "327 631 7105",
+    "lat": 45.461507,
+    "lng": 9.214357699999999,
+    "hours": {
+      "sun": [
+        "11:00",
+        "20:00"
+      ],
+      "tue": [
+        "11:00",
+        "20:00"
+      ],
+      "wed": [
+        "11:00",
+        "20:00"
+      ],
+      "thu": [
+        "11:00",
+        "20:00"
+      ],
+      "fri": [
+        "11:00",
+        "20:00"
+      ],
+      "sat": [
+        "11:00",
+        "20:00"
+      ]
+    },
+    "isLateNight": false,
+    "types": [
+      "bar",
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 5,
+    "ratingsTotal": 13
+  },
+  {
+    "placeId": "ChIJh6m6hYnGhkcRR_bST_f8rbA",
+    "name": "Il Chiosco ARCOBALENO",
+    "address": "Piazza Andrea Fusina, 3, 20133 Milano MI",
+    "neighborhood": "Città Studi",
+    "phone": null,
+    "lat": 45.4685813,
+    "lng": 9.2299996,
+    "hours": {
+      "tue": [
+        "19:00",
+        "02:00"
+      ],
+      "wed": [
+        "19:00",
+        "02:00"
+      ],
+      "thu": [
+        "19:00",
+        "02:00"
+      ],
+      "fri": [
+        "19:00",
+        "04:00"
+      ],
+      "sat": [
+        "19:00",
+        "04:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.7,
+    "ratingsTotal": 778
+  },
+  {
+    "placeId": "ChIJLwRK1djBhkcRVKEOtLBZmgE",
+    "name": "Chiosco panini",
+    "address": "Via Alfonso Capecelatro, 81, 20148 Milano MI",
+    "neighborhood": "San Siro",
+    "phone": null,
+    "lat": 45.474265,
+    "lng": 9.12603,
+    "hours": null,
+    "isLateNight": false,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 5,
+    "ratingsTotal": 4
+  },
+  {
+    "placeId": "ChIJC8_RJATEhkcRVv1UDUzViDw",
+    "name": "La Boutique del panino e della birra",
+    "address": "fronte civico n. 4 Chiosco bar, P.le di Porta Lodovica, 20136 Milano MI",
+    "neighborhood": "Bocconi",
+    "phone": "371 454 4789",
+    "lat": 45.4519502,
+    "lng": 9.1862906,
+    "hours": {
+      "sun": [
+        "20:00",
+        "05:00"
+      ],
+      "mon": [
+        "20:00",
+        "05:00"
+      ],
+      "tue": [
+        "20:00",
+        "05:00"
+      ],
+      "wed": [
+        "20:00",
+        "05:00"
+      ],
+      "thu": [
+        "20:00",
+        "05:00"
+      ],
+      "fri": [
+        "20:00",
+        "05:00"
+      ],
+      "sat": [
+        "20:00",
+        "05:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "bar",
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.6,
+    "ratingsTotal": 91
+  },
+  {
+    "placeId": "ChIJUyHbFmzHhkcR1IWlJt9rW-Y",
+    "name": "Cesarino",
+    "address": "Via Pattari, 2, 20122 Milano MI",
+    "neighborhood": "Porta Vittoria",
+    "phone": null,
+    "lat": 45.4644472,
+    "lng": 9.1935168,
+    "hours": {
+      "sun": [
+        "10:00",
+        "23:00"
+      ],
+      "mon": [
+        "10:00",
+        "23:00"
+      ],
+      "tue": [
+        "10:00",
+        "23:00"
+      ],
+      "wed": [
+        "10:00",
+        "23:00"
+      ],
+      "thu": [
+        "10:00",
+        "23:00"
+      ],
+      "fri": [
+        "10:00",
+        "23:00"
+      ],
+      "sat": [
+        "10:00",
+        "23:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.8,
+    "ratingsTotal": 2808
+  },
+  {
+    "placeId": "ChIJcQTV5EDHhkcRxZ7Em13rk5w",
+    "name": "Chiosco di via Marina",
+    "address": "Via Marina | Ang Via Palestro, 20121, 20121 Milano MI",
+    "neighborhood": "Porta Vittoria",
+    "phone": "333 670 1965",
+    "lat": 45.4723172,
+    "lng": 9.200962299999999,
+    "hours": {
+      "mon": [
+        "07:00",
+        "17:00"
+      ],
+      "tue": [
+        "07:00",
+        "17:00"
+      ],
+      "wed": [
+        "07:00",
+        "17:00"
+      ],
+      "thu": [
+        "07:00",
+        "17:00"
+      ],
+      "fri": [
+        "07:00",
+        "16:00"
+      ]
+    },
+    "isLateNight": false,
+    "types": [
+      "bar",
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.5,
+    "ratingsTotal": 97
+  },
+  {
+    "placeId": "ChIJ-6W1E6bGhkcRR5BCiZUxEGg",
+    "name": "Il panino del laghetto",
+    "address": "Via Laghetto, 7, 20122 Milano MI",
+    "neighborhood": "Porta Vittoria",
+    "phone": "339 383 8785",
+    "lat": 45.4615626,
+    "lng": 9.1956376,
+    "hours": {
+      "mon": [
+        "11:00",
+        "16:00"
+      ],
+      "tue": [
+        "11:00",
+        "16:00"
+      ],
+      "wed": [
+        "11:00",
+        "16:00"
+      ],
+      "thu": [
+        "11:00",
+        "16:00"
+      ],
+      "fri": [
+        "11:00",
+        "16:00"
+      ],
+      "sat": [
+        "11:00",
+        "16:00"
+      ]
+    },
+    "isLateNight": false,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.8,
+    "ratingsTotal": 706
+  },
+  {
+    "placeId": "ChIJQ1CZo03BhkcR5Jyr1xS3VaY",
+    "name": "Chiosco Squadre Calcio",
+    "address": "Piazza Castello, 4, 20121 Milano MI",
+    "neighborhood": "Brera",
+    "phone": "351 997 0393",
+    "lat": 45.4696357,
+    "lng": 9.1815418,
+    "hours": {
+      "sun": [
+        "12:00",
+        "23:00"
+      ],
+      "mon": [
+        "12:00",
+        "23:00"
+      ],
+      "tue": [
+        "12:00",
+        "23:00"
+      ],
+      "wed": [
+        "12:00",
+        "23:00"
+      ],
+      "thu": [
+        "12:00",
+        "23:00"
+      ],
+      "fri": [
+        "12:00",
+        "23:00"
+      ],
+      "sat": [
+        "12:00",
+        "23:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.6,
+    "ratingsTotal": 781
+  },
+  {
+    "placeId": "ChIJ3SpqDqbGhkcRJsxoeC_gPks",
+    "name": "I panini della Bottega di Via Laghetto",
+    "address": "Via Laghetto, 3, 20122 Milano MI",
+    "neighborhood": "Porta Vittoria",
+    "phone": "02 8287 2329",
+    "lat": 45.4617514,
+    "lng": 9.1953867,
+    "hours": {
+      "sun": [
+        "10:00",
+        "16:30"
+      ],
+      "mon": [
+        "10:00",
+        "16:30"
+      ],
+      "tue": [
+        "10:00",
+        "22:00"
+      ],
+      "wed": [
+        "10:00",
+        "22:00"
+      ],
+      "thu": [
+        "10:00",
+        "22:00"
+      ],
+      "fri": [
+        "10:00",
+        "22:00"
+      ],
+      "sat": [
+        "10:00",
+        "22:00"
+      ]
+    },
+    "isLateNight": false,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.7,
+    "ratingsTotal": 324
+  },
+  {
+    "placeId": "ChIJVSxHGITBhkcRgsieP8ZKip0",
+    "name": "Chiosco Bar Isola Verde",
+    "address": "Piazza Melozzo da Forlì, 3, 20147 Milano MI",
+    "neighborhood": "San Siro",
+    "phone": "02 4971 2359",
+    "lat": 45.4682007,
+    "lng": 9.131253,
+    "hours": {
+      "sun": [
+        "00:00",
+        "23:59"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.4,
+    "ratingsTotal": 828
+  },
+  {
+    "placeId": "ChIJi0SOZrvHhkcRoGLEN7Zhxeg",
+    "name": "Al Boschetto da Gabry",
+    "address": "C.so di Porta Vittoria, 20122 Milano MI",
+    "neighborhood": "Porta Vittoria",
+    "phone": null,
+    "lat": 45.4624513,
+    "lng": 9.2011819,
+    "hours": {
+      "mon": [
+        "11:00",
+        "06:00"
+      ],
+      "tue": [
+        "11:00",
+        "06:00"
+      ],
+      "wed": [
+        "11:00",
+        "06:00"
+      ],
+      "thu": [
+        "11:00",
+        "06:00"
+      ],
+      "fri": [
+        "11:00",
+        "06:00"
+      ],
+      "sat": [
+        "11:00",
+        "06:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.5,
+    "ratingsTotal": 113
+  },
+  {
+    "placeId": "ChIJE-8nk6vGhkcRgu7OZZVUyrU",
+    "name": "Bar Paninoteca Unione",
+    "address": "Via dell'Unione, 3, 20122 Milano MI",
+    "neighborhood": "Brera",
+    "phone": "02 3599 2039",
+    "lat": 45.4621529,
+    "lng": 9.1874205,
+    "hours": {
+      "sun": [
+        "11:00",
+        "21:00"
+      ],
+      "mon": [
+        "08:00",
+        "21:00"
+      ],
+      "tue": [
+        "08:00",
+        "21:00"
+      ],
+      "wed": [
+        "08:00",
+        "21:00"
+      ],
+      "thu": [
+        "08:00",
+        "21:00"
+      ],
+      "fri": [
+        "08:00",
+        "21:00"
+      ],
+      "sat": [
+        "11:00",
+        "21:00"
+      ]
+    },
+    "isLateNight": false,
+    "types": [
+      "bar",
+      "establishment",
+      "food",
+      "night_club",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.4,
+    "ratingsTotal": 294
+  },
+  {
+    "placeId": "ChIJR4sSylPBhkcRYdWEkhLxd18",
+    "name": "De Santis / Milano Magenta",
+    "address": "Corso Magenta, 9, 20123 Milano MI",
+    "neighborhood": "Sempione",
+    "phone": "02 7209 5124",
+    "lat": 45.46557199999999,
+    "lng": 9.179684,
+    "hours": {
+      "sun": [
+        "11:00",
+        "23:00"
+      ],
+      "mon": [
+        "11:00",
+        "23:00"
+      ],
+      "tue": [
+        "11:00",
+        "23:00"
+      ],
+      "wed": [
+        "11:00",
+        "23:00"
+      ],
+      "thu": [
+        "11:00",
+        "23:00"
+      ],
+      "fri": [
+        "11:00",
+        "23:00"
+      ],
+      "sat": [
+        "11:00",
+        "23:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.4,
+    "ratingsTotal": 1336
+  },
+  {
+    "placeId": "ChIJM0osU6_GhkcR28eiK1k1sKc",
+    "name": "Margy Burger Milano",
+    "address": "Piazza Santo Stefano, 2, 20122 Milano MI",
+    "neighborhood": "Porta Vittoria",
+    "phone": "02 5830 3734",
+    "lat": 45.4623184,
+    "lng": 9.1942363,
+    "hours": {
+      "sun": [
+        "18:00",
+        "02:00"
+      ],
+      "mon": [
+        "18:00",
+        "02:00"
+      ],
+      "tue": [
+        "18:00",
+        "02:00"
+      ],
+      "wed": [
+        "18:00",
+        "02:00"
+      ],
+      "thu": [
+        "18:00",
+        "02:00"
+      ],
+      "fri": [
+        "18:00",
+        "02:00"
+      ],
+      "sat": [
+        "18:00",
+        "02:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "bar",
+      "cafe",
+      "establishment",
+      "food",
+      "meal_takeaway",
+      "point_of_interest",
+      "restaurant",
+      "store"
+    ],
+    "rating": 4.3,
+    "ratingsTotal": 2083
+  },
+  {
+    "placeId": "ChIJhXzSYgDBhkcRHDLvOJjMJrw",
+    "name": "Cesarino",
+    "address": "Corso Como, 12, 20124 Milano MI",
+    "neighborhood": "Isola",
+    "phone": null,
+    "lat": 45.4820388,
+    "lng": 9.1874778,
+    "hours": {
+      "sun": [
+        "11:00",
+        "00:00"
+      ],
+      "mon": [
+        "11:00",
+        "00:00"
+      ],
+      "tue": [
+        "11:00",
+        "00:00"
+      ],
+      "wed": [
+        "11:00",
+        "00:00"
+      ],
+      "thu": [
+        "11:00",
+        "00:00"
+      ],
+      "fri": [
+        "11:00",
+        "00:00"
+      ],
+      "sat": [
+        "11:00",
+        "00:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.9,
+    "ratingsTotal": 125
+  },
+  {
+    "placeId": "ChIJcyX10SzHhkcRZmflTyD5j_g",
+    "name": "All'Antico Vinaio",
+    "address": "Via Orefici, 5, 20123 Milano MI",
+    "neighborhood": "Brera",
+    "phone": "02 7709 5480",
+    "lat": 45.4641665,
+    "lng": 9.1874238,
+    "hours": {
+      "sun": [
+        "10:00",
+        "22:00"
+      ],
+      "mon": [
+        "10:00",
+        "22:00"
+      ],
+      "tue": [
+        "10:00",
+        "22:00"
+      ],
+      "wed": [
+        "10:00",
+        "22:00"
+      ],
+      "thu": [
+        "10:00",
+        "22:00"
+      ],
+      "fri": [
+        "10:00",
+        "22:00"
+      ],
+      "sat": [
+        "10:00",
+        "22:00"
+      ]
+    },
+    "isLateNight": false,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.4,
+    "ratingsTotal": 789
+  },
+  {
+    "placeId": "ChIJublWZNDHhkcRGwyhmCTwRZs",
+    "name": "All'Antico Vinaio Milano",
+    "address": "Piazza Luigi di Savoia, 1/15, 20124 Milano MI",
+    "neighborhood": "Isola",
+    "phone": "02 6707 6735",
+    "lat": 45.4860024,
+    "lng": 9.2061761,
+    "hours": {
+      "sun": [
+        "10:00",
+        "22:00"
+      ],
+      "mon": [
+        "10:00",
+        "22:00"
+      ],
+      "tue": [
+        "10:00",
+        "22:00"
+      ],
+      "wed": [
+        "10:00",
+        "22:00"
+      ],
+      "thu": [
+        "10:00",
+        "22:00"
+      ],
+      "fri": [
+        "10:00",
+        "22:00"
+      ],
+      "sat": [
+        "10:00",
+        "22:00"
+      ]
+    },
+    "isLateNight": false,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.4,
+    "ratingsTotal": 1896
+  },
+  {
+    "placeId": "ChIJIfqpH4jHhkcR-i9pwrlqTHM",
+    "name": "Panino doc",
+    "address": "Viale Lunigiana, 19, 20125 Milano MI",
+    "neighborhood": "Isola",
+    "phone": "339 407 0702",
+    "lat": 45.4916663,
+    "lng": 9.204333499999999,
+    "hours": {
+      "mon": [
+        "12:15",
+        "22:30"
+      ],
+      "tue": [
+        "12:15",
+        "22:30"
+      ],
+      "wed": [
+        "12:20",
+        "22:30"
+      ],
+      "thu": [
+        "12:15",
+        "23:00"
+      ],
+      "fri": [
+        "12:20",
+        "23:00"
+      ],
+      "sat": [
+        "18:15",
+        "23:30"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.9,
+    "ratingsTotal": 799
+  },
+  {
+    "placeId": "ChIJd3LVchnHhkcR_iOYKoze7vE",
+    "name": "PANINI TOSTI MILANO",
+    "address": "Via Matteo Maria Boiardo, 19, 20127 Milano MI",
+    "neighborhood": "Città Studi",
+    "phone": "02 3669 4275",
+    "lat": 45.49997,
+    "lng": 9.222959,
+    "hours": {
+      "mon": [
+        "07:00",
+        "23:00"
+      ],
+      "tue": [
+        "07:00",
+        "23:00"
+      ],
+      "wed": [
+        "07:00",
+        "23:00"
+      ],
+      "thu": [
+        "07:00",
+        "23:00"
+      ],
+      "fri": [
+        "07:00",
+        "23:00"
+      ],
+      "sat": [
+        "08:30",
+        "23:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "bar",
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.6,
+    "ratingsTotal": 602
+  },
+  {
+    "placeId": "ChIJpdwGJ3rBhkcRv44L0978xXE",
+    "name": "De Santis / Milano Brera",
+    "address": "Via Mercato, 24, 20121 Milano MI",
+    "neighborhood": "Brera",
+    "phone": "02 3595 6296",
+    "lat": 45.4713281,
+    "lng": 9.1844485,
+    "hours": {
+      "sun": [
+        "07:30",
+        "22:00"
+      ],
+      "mon": [
+        "07:30",
+        "22:00"
+      ],
+      "tue": [
+        "07:30",
+        "22:00"
+      ],
+      "wed": [
+        "07:30",
+        "22:00"
+      ],
+      "thu": [
+        "07:30",
+        "22:00"
+      ],
+      "fri": [
+        "07:30",
+        "00:00"
+      ],
+      "sat": [
+        "07:30",
+        "00:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 3.9,
+    "ratingsTotal": 58
+  },
+  {
+    "placeId": "ChIJ390Dg5vHhkcR77VTiYaiZGY",
+    "name": "Kampe Milano",
+    "address": "Galleria Unione, 1, 20123 Milano MI",
+    "neighborhood": "Bocconi",
+    "phone": "02 3651 9482",
+    "lat": 45.4615527,
+    "lng": 9.1877426,
+    "hours": {
+      "sun": [
+        "14:00",
+        "01:00"
+      ],
+      "mon": [
+        "14:00",
+        "01:00"
+      ],
+      "wed": [
+        "14:00",
+        "01:00"
+      ],
+      "thu": [
+        "14:00",
+        "01:00"
+      ],
+      "fri": [
+        "14:00",
+        "01:00"
+      ],
+      "sat": [
+        "14:00",
+        "01:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "bakery",
+      "bar",
+      "cafe",
+      "establishment",
+      "food",
+      "night_club",
+      "point_of_interest",
+      "store"
+    ],
+    "rating": 4.9,
+    "ratingsTotal": 37
+  },
+  {
+    "placeId": "ChIJ-SDKfA_HhkcRbfpmOiig5gs",
+    "name": "Panino Giusto",
+    "address": "Via Borgogna, 5, 20122 Milano MI",
+    "neighborhood": "Porta Vittoria",
+    "phone": "02 2506 1005",
+    "lat": 45.4659395,
+    "lng": 9.1987852,
+    "hours": {
+      "sun": [
+        "10:00",
+        "23:00"
+      ],
+      "mon": [
+        "10:00",
+        "23:00"
+      ],
+      "tue": [
+        "10:00",
+        "23:00"
+      ],
+      "wed": [
+        "10:00",
+        "23:00"
+      ],
+      "thu": [
+        "10:00",
+        "23:00"
+      ],
+      "fri": [
+        "10:00",
+        "23:00"
+      ],
+      "sat": [
+        "10:00",
+        "23:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4,
+    "ratingsTotal": 2257
+  },
+  {
+    "placeId": "ChIJORVmcx3EhkcRYom5MYntrWQ",
+    "name": "Crocetta Panini d'Autore 1982",
+    "address": "Corso di Porta Romana, 67, 20122 Milano MI",
+    "neighborhood": "Porta Romana",
+    "phone": "02 545 0228",
+    "lat": 45.4564725,
+    "lng": 9.1953893,
+    "hours": {
+      "sun": [
+        "10:00",
+        "21:30"
+      ],
+      "mon": [
+        "10:00",
+        "00:00"
+      ],
+      "tue": [
+        "10:00",
+        "00:00"
+      ],
+      "wed": [
+        "10:00",
+        "00:00"
+      ],
+      "thu": [
+        "10:00",
+        "00:00"
+      ],
+      "fri": [
+        "10:00",
+        "00:00"
+      ],
+      "sat": [
+        "10:00",
+        "00:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 3.7,
+    "ratingsTotal": 448
+  },
+  {
+    "placeId": "ChIJM0_JPlXBhkcRi44VdWsDw4Q",
+    "name": "Panino Giusto",
+    "address": "Corso di Porta Ticinese,1 Ang. Largo Carrobbio Colonne di San Lorenzo, Corso di Porta Ticinese, 1, 20123 Milano MI",
+    "neighborhood": "Navigli",
+    "phone": "02 2506 0672",
+    "lat": 45.4598145,
+    "lng": 9.1813931,
+    "hours": {
+      "sun": [
+        "11:00",
+        "00:00"
+      ],
+      "mon": [
+        "10:00",
+        "23:00"
+      ],
+      "tue": [
+        "10:00",
+        "23:00"
+      ],
+      "wed": [
+        "10:00",
+        "23:00"
+      ],
+      "thu": [
+        "10:00",
+        "23:00"
+      ],
+      "fri": [
+        "10:00",
+        "23:00"
+      ],
+      "sat": [
+        "10:00",
+        "23:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4,
+    "ratingsTotal": 1091
+  },
+  {
+    "placeId": "ChIJ49FuRq7GhkcRMFWnNns0M_k",
+    "name": "De Santis / Milano Rinascente Duomo",
+    "address": "Food Hall, Via Santa Radegonda, 10/7° piano, 20144 Milano MI",
+    "neighborhood": "Brera",
+    "phone": "02 885 2457",
+    "lat": 45.4650275,
+    "lng": 9.1920968,
+    "hours": {
+      "sun": [
+        "09:00",
+        "00:00"
+      ],
+      "mon": [
+        "09:00",
+        "00:00"
+      ],
+      "tue": [
+        "09:00",
+        "00:00"
+      ],
+      "wed": [
+        "09:00",
+        "00:00"
+      ],
+      "thu": [
+        "09:00",
+        "00:00"
+      ],
+      "fri": [
+        "09:00",
+        "00:00"
+      ],
+      "sat": [
+        "09:00",
+        "00:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 3.6,
+    "ratingsTotal": 156
+  },
+  {
+    "placeId": "ChIJSbgkcwDBhkcR2eA4GeO1r2I",
+    "name": "Ditta Artigianale Specialty Coffee Roasters",
+    "address": "Corso Magenta, 31, 20123 Milano MI",
+    "neighborhood": "Sempione",
+    "phone": "02 9925 0284",
+    "lat": 45.4658338,
+    "lng": 9.1758816,
+    "hours": {
+      "sun": [
+        "08:00",
+        "22:00"
+      ],
+      "mon": [
+        "07:30",
+        "22:00"
+      ],
+      "tue": [
+        "07:30",
+        "22:00"
+      ],
+      "wed": [
+        "07:30",
+        "22:00"
+      ],
+      "thu": [
+        "07:30",
+        "22:00"
+      ],
+      "fri": [
+        "07:30",
+        "22:00"
+      ],
+      "sat": [
+        "08:00",
+        "22:00"
+      ]
+    },
+    "isLateNight": false,
+    "types": [
+      "bar",
+      "cafe",
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant",
+      "store"
+    ],
+    "rating": 4.4,
+    "ratingsTotal": 773
+  },
+  {
+    "placeId": "ChIJuUkuckvBhkcRgQN_4bkxwZ4",
+    "name": "Tramé - Brera",
+    "address": "Piazza S. Simpliciano, 6, 20121 Milano MI",
+    "neighborhood": "Brera",
+    "phone": "02 8410 5336",
+    "lat": 45.4737959,
+    "lng": 9.1837304,
+    "hours": {
+      "sun": [
+        "10:30",
+        "23:00"
+      ],
+      "mon": [
+        "10:30",
+        "22:00"
+      ],
+      "tue": [
+        "10:30",
+        "22:00"
+      ],
+      "wed": [
+        "10:30",
+        "00:00"
+      ],
+      "thu": [
+        "10:30",
+        "00:00"
+      ],
+      "fri": [
+        "10:30",
+        "01:00"
+      ],
+      "sat": [
+        "10:30",
+        "01:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 3.8,
+    "ratingsTotal": 1618
+  },
+  {
+    "placeId": "ChIJf0kfdq_GhkcRwcOhLMazugI",
+    "name": "I Panini della Befi - Milano",
+    "address": "Via Privata della Passarella, 4, 20122 Milano MI",
+    "neighborhood": "Porta Vittoria",
+    "phone": "02 7602 3321",
+    "lat": 45.4647841,
+    "lng": 9.1942685,
+    "hours": {
+      "sun": [
+        "08:00",
+        "20:00"
+      ],
+      "mon": [
+        "07:00",
+        "20:00"
+      ],
+      "tue": [
+        "07:00",
+        "20:00"
+      ],
+      "wed": [
+        "07:00",
+        "20:00"
+      ],
+      "thu": [
+        "07:00",
+        "20:00"
+      ],
+      "fri": [
+        "07:00",
+        "20:00"
+      ],
+      "sat": [
+        "08:00",
+        "20:00"
+      ]
+    },
+    "isLateNight": false,
+    "types": [
+      "bar",
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.2,
+    "ratingsTotal": 509
+  },
+  {
+    "placeId": "ChIJGegvZQDHhkcRAKuBm7aGBKw",
+    "name": "Panozzi e Panelli Bottega Meneghina",
+    "address": "Via Bergamini, 15, 20122 Milano MI",
+    "neighborhood": "Porta Vittoria",
+    "phone": "329 661 3432",
+    "lat": 45.461367,
+    "lng": 9.1944156,
+    "hours": {
+      "sun": [
+        "11:00",
+        "14:30"
+      ],
+      "mon": [
+        "10:30",
+        "16:30"
+      ],
+      "tue": [
+        "10:30",
+        "16:30"
+      ],
+      "wed": [
+        "10:30",
+        "16:30"
+      ],
+      "thu": [
+        "10:30",
+        "16:30"
+      ],
+      "fri": [
+        "10:30",
+        "16:30"
+      ],
+      "sat": [
+        "11:00",
+        "16:30"
+      ]
+    },
+    "isLateNight": false,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 5,
+    "ratingsTotal": 322
+  },
+  {
+    "placeId": "ChIJtebRLgDFhkcReBEVADaLeEM",
+    "name": "Il Panino Perfetto",
+    "address": "V.le Bligny, 1, 20136 Milano MI",
+    "neighborhood": "Bocconi",
+    "phone": "348 545 8102",
+    "lat": 45.4517114,
+    "lng": 9.187670599999999,
+    "hours": {
+      "sun": [
+        "11:30",
+        "16:00"
+      ],
+      "mon": [
+        "11:30",
+        "23:00"
+      ],
+      "tue": [
+        "11:30",
+        "23:00"
+      ],
+      "wed": [
+        "11:30",
+        "23:00"
+      ],
+      "thu": [
+        "11:30",
+        "23:00"
+      ],
+      "fri": [
+        "11:30",
+        "23:00"
+      ],
+      "sat": [
+        "11:30",
+        "23:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.4,
+    "ratingsTotal": 327
+  },
+  {
+    "placeId": "ChIJi-81IgDFhkcRkqf3UOmx-TQ",
+    "name": "Salamellaz",
+    "address": "V.le Bligny, 18, 20136 Milano MI",
+    "neighborhood": "Bocconi",
+    "phone": "340 184 2527",
+    "lat": 45.4510991,
+    "lng": 9.189094899999999,
+    "hours": {
+      "sun": [
+        "11:30",
+        "22:30"
+      ],
+      "tue": [
+        "11:30",
+        "22:30"
+      ],
+      "wed": [
+        "11:30",
+        "22:30"
+      ],
+      "thu": [
+        "11:30",
+        "22:30"
+      ],
+      "fri": [
+        "11:30",
+        "22:30"
+      ],
+      "sat": [
+        "11:30",
+        "22:30"
+      ]
+    },
+    "isLateNight": false,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.5,
+    "ratingsTotal": 34
+  },
+  {
+    "placeId": "ChIJxQWLWMzBhkcRbC74c2fi3bA",
+    "name": "Salamellaz",
+    "address": "Piazzale Angelo Moratti, 20151 Milano MI",
+    "neighborhood": "San Siro",
+    "phone": null,
+    "lat": 45.4797966,
+    "lng": 9.1262847,
+    "hours": null,
+    "isLateNight": false,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 3.3,
+    "ratingsTotal": 10
+  }
+]

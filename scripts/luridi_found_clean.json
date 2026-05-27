@@ -1,0 +1,420 @@
+[
+  {
+    "placeId": "ChIJL_Nc9E3BhkcRJjH2ao-Mu4w",
+    "name": "Chiosco al Politico",
+    "address": "Piazza Castello, 5, 20121 Milano MI",
+    "neighborhood": "Sempione",
+    "phone": "327 766 5481",
+    "lat": 45.4688188,
+    "lng": 9.180332,
+    "hours": {
+      "sun": [
+        "10:30",
+        "00:00"
+      ],
+      "mon": [
+        "10:30",
+        "00:00"
+      ],
+      "tue": [
+        "10:30",
+        "00:00"
+      ],
+      "wed": [
+        "10:30",
+        "00:00"
+      ],
+      "thu": [
+        "10:30",
+        "00:00"
+      ],
+      "fri": [
+        "10:30",
+        "00:00"
+      ],
+      "sat": [
+        "10:30",
+        "00:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.6,
+    "ratingsTotal": 1082
+  },
+  {
+    "placeId": "ChIJh6m6hYnGhkcRR_bST_f8rbA",
+    "name": "Il Chiosco ARCOBALENO",
+    "address": "Piazza Andrea Fusina, 3, 20133 Milano MI",
+    "neighborhood": "Città Studi",
+    "phone": null,
+    "lat": 45.4685813,
+    "lng": 9.2299996,
+    "hours": {
+      "tue": [
+        "19:00",
+        "02:00"
+      ],
+      "wed": [
+        "19:00",
+        "02:00"
+      ],
+      "thu": [
+        "19:00",
+        "02:00"
+      ],
+      "fri": [
+        "19:00",
+        "04:00"
+      ],
+      "sat": [
+        "19:00",
+        "04:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.7,
+    "ratingsTotal": 778
+  },
+  {
+    "placeId": "ChIJC8_RJATEhkcRVv1UDUzViDw",
+    "name": "La Boutique del panino e della birra",
+    "address": "fronte civico n. 4 Chiosco bar, P.le di Porta Lodovica, 20136 Milano MI",
+    "neighborhood": "Bocconi",
+    "phone": "371 454 4789",
+    "lat": 45.4519502,
+    "lng": 9.1862906,
+    "hours": {
+      "sun": [
+        "20:00",
+        "05:00"
+      ],
+      "mon": [
+        "20:00",
+        "05:00"
+      ],
+      "tue": [
+        "20:00",
+        "05:00"
+      ],
+      "wed": [
+        "20:00",
+        "05:00"
+      ],
+      "thu": [
+        "20:00",
+        "05:00"
+      ],
+      "fri": [
+        "20:00",
+        "05:00"
+      ],
+      "sat": [
+        "20:00",
+        "05:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "bar",
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.6,
+    "ratingsTotal": 91
+  },
+  {
+    "placeId": "ChIJUyHbFmzHhkcR1IWlJt9rW-Y",
+    "name": "Cesarino",
+    "address": "Via Pattari, 2, 20122 Milano MI",
+    "neighborhood": "Porta Vittoria",
+    "phone": null,
+    "lat": 45.4644472,
+    "lng": 9.1935168,
+    "hours": {
+      "sun": [
+        "10:00",
+        "23:00"
+      ],
+      "mon": [
+        "10:00",
+        "23:00"
+      ],
+      "tue": [
+        "10:00",
+        "23:00"
+      ],
+      "wed": [
+        "10:00",
+        "23:00"
+      ],
+      "thu": [
+        "10:00",
+        "23:00"
+      ],
+      "fri": [
+        "10:00",
+        "23:00"
+      ],
+      "sat": [
+        "10:00",
+        "23:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.8,
+    "ratingsTotal": 2808
+  },
+  {
+    "placeId": "ChIJQ1CZo03BhkcR5Jyr1xS3VaY",
+    "name": "Chiosco Squadre Calcio",
+    "address": "Piazza Castello, 4, 20121 Milano MI",
+    "neighborhood": "Brera",
+    "phone": "351 997 0393",
+    "lat": 45.4696357,
+    "lng": 9.1815418,
+    "hours": {
+      "sun": [
+        "12:00",
+        "23:00"
+      ],
+      "mon": [
+        "12:00",
+        "23:00"
+      ],
+      "tue": [
+        "12:00",
+        "23:00"
+      ],
+      "wed": [
+        "12:00",
+        "23:00"
+      ],
+      "thu": [
+        "12:00",
+        "23:00"
+      ],
+      "fri": [
+        "12:00",
+        "23:00"
+      ],
+      "sat": [
+        "12:00",
+        "23:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.6,
+    "ratingsTotal": 781
+  },
+  {
+    "placeId": "ChIJhXzSYgDBhkcRHDLvOJjMJrw",
+    "name": "Cesarino",
+    "address": "Corso Como, 12, 20124 Milano MI",
+    "neighborhood": "Isola",
+    "phone": null,
+    "lat": 45.4820388,
+    "lng": 9.1874778,
+    "hours": {
+      "sun": [
+        "11:00",
+        "00:00"
+      ],
+      "mon": [
+        "11:00",
+        "00:00"
+      ],
+      "tue": [
+        "11:00",
+        "00:00"
+      ],
+      "wed": [
+        "11:00",
+        "00:00"
+      ],
+      "thu": [
+        "11:00",
+        "00:00"
+      ],
+      "fri": [
+        "11:00",
+        "00:00"
+      ],
+      "sat": [
+        "11:00",
+        "00:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.9,
+    "ratingsTotal": 125
+  },
+  {
+    "placeId": "ChIJIfqpH4jHhkcR-i9pwrlqTHM",
+    "name": "Panino doc",
+    "address": "Viale Lunigiana, 19, 20125 Milano MI",
+    "neighborhood": "Isola",
+    "phone": "339 407 0702",
+    "lat": 45.4916663,
+    "lng": 9.204333499999999,
+    "hours": {
+      "mon": [
+        "12:15",
+        "22:30"
+      ],
+      "tue": [
+        "12:15",
+        "22:30"
+      ],
+      "wed": [
+        "12:20",
+        "22:30"
+      ],
+      "thu": [
+        "12:15",
+        "23:00"
+      ],
+      "fri": [
+        "12:20",
+        "23:00"
+      ],
+      "sat": [
+        "18:15",
+        "23:30"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.9,
+    "ratingsTotal": 799
+  },
+  {
+    "placeId": "ChIJd3LVchnHhkcR_iOYKoze7vE",
+    "name": "PANINI TOSTI MILANO",
+    "address": "Via Matteo Maria Boiardo, 19, 20127 Milano MI",
+    "neighborhood": "Città Studi",
+    "phone": "02 3669 4275",
+    "lat": 45.49997,
+    "lng": 9.222959,
+    "hours": {
+      "mon": [
+        "07:00",
+        "23:00"
+      ],
+      "tue": [
+        "07:00",
+        "23:00"
+      ],
+      "wed": [
+        "07:00",
+        "23:00"
+      ],
+      "thu": [
+        "07:00",
+        "23:00"
+      ],
+      "fri": [
+        "07:00",
+        "23:00"
+      ],
+      "sat": [
+        "08:30",
+        "23:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "bar",
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.6,
+    "ratingsTotal": 602
+  },
+  {
+    "placeId": "ChIJtebRLgDFhkcReBEVADaLeEM",
+    "name": "Il Panino Perfetto",
+    "address": "V.le Bligny, 1, 20136 Milano MI",
+    "neighborhood": "Bocconi",
+    "phone": "348 545 8102",
+    "lat": 45.4517114,
+    "lng": 9.187670599999999,
+    "hours": {
+      "sun": [
+        "11:30",
+        "16:00"
+      ],
+      "mon": [
+        "11:30",
+        "23:00"
+      ],
+      "tue": [
+        "11:30",
+        "23:00"
+      ],
+      "wed": [
+        "11:30",
+        "23:00"
+      ],
+      "thu": [
+        "11:30",
+        "23:00"
+      ],
+      "fri": [
+        "11:30",
+        "23:00"
+      ],
+      "sat": [
+        "11:30",
+        "23:00"
+      ]
+    },
+    "isLateNight": true,
+    "types": [
+      "establishment",
+      "food",
+      "point_of_interest",
+      "restaurant"
+    ],
+    "rating": 4.4,
+    "ratingsTotal": 327
+  }
+]
