@@ -87,7 +87,8 @@ export default function LuridoDetailScreen() {
   const isSaved = savedSet?.some((s) => s.luridoId === (id ?? '')) ?? false;
   const open = lurido ? isOpenNow(lurido.hours) : false;
   const closeTime = lurido ? formatCloseTime(lurido.hours) : null;
-  const heroPhoto = photos[0]?.url;
+  const heroPhoto = photos[0]?.url ??
+    (lurido?.googlePlaceId === 'NOT_FOUND' ? `https://picsum.photos/seed/${lurido.slug ?? lurido.id}/800/600` : undefined);
 
   const onSubmitReview = (data: ReviewForm) => {
     createReview(
@@ -194,6 +195,16 @@ export default function LuridoDetailScreen() {
               </Text>
             </View>
           ) : null}
+
+          {/* Banner non verificato */}
+          {lurido.googlePlaceId === 'NOT_FOUND' && (
+            <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 8, backgroundColor: '#fef3c7', borderRadius: 10, padding: 10, marginTop: 4 }}>
+              <Text style={{ fontSize: 16 }}>⚠️</Text>
+              <Text style={{ flex: 1, fontSize: 13, color: '#92400e', lineHeight: 18 }}>
+                Questo lurido non è su Google Maps — le informazioni potrebbero non essere aggiornate.
+              </Text>
+            </View>
+          )}
 
           {/* Action row */}
           <View style={{ flexDirection: 'row', gap: 8, marginTop: 4 }}>
