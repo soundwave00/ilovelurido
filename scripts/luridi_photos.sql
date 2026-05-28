@@ -1,0 +1,258 @@
+-- Generato da scripts/fetch-photos.mjs il 2026-05-28
+-- Inserisce foto Google Places (URL CDN lh3.googleusercontent.com) per i luridi
+-- con google_place_id corrispondente.
+--
+-- PREREQUISITO: migration 0003 eseguita (nearby_luridi/search_luridi aggiornati)
+-- NOTA: se google_place_id non esiste nella colonna, la query è no-op.
+
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZPE48iLQQYh6ExsoTOLNed56wfNm4pDuKp9X3sZBkjjZQdL96OOEUFwVusVyVBxYYvrk9tkcxn4tCQJfgrxaBt5NiaoWZ3d4W4FkwB_Aopm6zl1fJXTGlcgfGHExsdL5RDCBlRE1pmnYEsfkA=s1600-w800', 0
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJL_Nc9E3BhkcRJjH2ao-Mu4w'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJL_Nc9E3BhkcRJjH2ao-Mu4w')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZPE48iLQQYh6ExsoTOLNed56wfNm4pDuKp9X3sZBkjjZQdL96OOEUFwVusVyVBxYYvrk9tkcxn4tCQJfgrxaBt5NiaoWZ3d4W4FkwB_Aopm6zl1fJXTGlcgfGHExsdL5RDCBlRE1pmnYEsfkA=s1600-w800'
+    );
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZNyc18REjjNlwqFa3jHORsf978nhT3A7sYKPa93PFZinUPUffJGZAypoKFG57yqInMwCtDI3Vq4dX08mI01msFsVR8-Yx6FOXM3zJDt2FxgfbKGF1bqsbNG4-6JHGOcOVj7vM3AYv4W38Z9Dw=s1600-w800', 1
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJL_Nc9E3BhkcRJjH2ao-Mu4w'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJL_Nc9E3BhkcRJjH2ao-Mu4w')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZNyc18REjjNlwqFa3jHORsf978nhT3A7sYKPa93PFZinUPUffJGZAypoKFG57yqInMwCtDI3Vq4dX08mI01msFsVR8-Yx6FOXM3zJDt2FxgfbKGF1bqsbNG4-6JHGOcOVj7vM3AYv4W38Z9Dw=s1600-w800'
+    );
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZOckPBFPt6OqCTrgnwo5udj58DxpyhPe7SyjMMwU7pMG0VRPqbzsY6uPheGNo3A6XxrWjr_i_xMF-VFTA1yXkTy4-qoJg2rR9G_oH3OSoqlPAzur8ytS1tGbRvy0VDIZ9QXsBEQsi11i4lPRbUo31RuOA=s1600-w800', 2
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJL_Nc9E3BhkcRJjH2ao-Mu4w'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJL_Nc9E3BhkcRJjH2ao-Mu4w')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZOckPBFPt6OqCTrgnwo5udj58DxpyhPe7SyjMMwU7pMG0VRPqbzsY6uPheGNo3A6XxrWjr_i_xMF-VFTA1yXkTy4-qoJg2rR9G_oH3OSoqlPAzur8ytS1tGbRvy0VDIZ9QXsBEQsi11i4lPRbUo31RuOA=s1600-w800'
+    );
+
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZOL52xttkkNkbqsiltvSRfdwblwp0Htse3C1u8HlsQa8ihcsE85880Cg22xgcRQW6Kge53KKrtzsVQLDLLgodG9ZIytvW2cFLy_ROMDEY2JpQsWdOocWZVgUYxS4ZBioAfGwLJp_SpVybauM-o=s1600-w800', 0
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJh6m6hYnGhkcRR_bST_f8rbA'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJh6m6hYnGhkcRR_bST_f8rbA')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZOL52xttkkNkbqsiltvSRfdwblwp0Htse3C1u8HlsQa8ihcsE85880Cg22xgcRQW6Kge53KKrtzsVQLDLLgodG9ZIytvW2cFLy_ROMDEY2JpQsWdOocWZVgUYxS4ZBioAfGwLJp_SpVybauM-o=s1600-w800'
+    );
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZPMnJ0UvmQjflRYYJYtBpShkShHK5BUMAR_X6SxlY1sfVXRTIUC7VSlNQ664IwwJNl1izmKmm8EY-5oYjUHW7ayZZQEG0atPSL3SXtnYlCfts6030qHKeGYqdUXyovUe0OJTU_uG7u7BX8q=s1600-w800', 1
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJh6m6hYnGhkcRR_bST_f8rbA'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJh6m6hYnGhkcRR_bST_f8rbA')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZPMnJ0UvmQjflRYYJYtBpShkShHK5BUMAR_X6SxlY1sfVXRTIUC7VSlNQ664IwwJNl1izmKmm8EY-5oYjUHW7ayZZQEG0atPSL3SXtnYlCfts6030qHKeGYqdUXyovUe0OJTU_uG7u7BX8q=s1600-w800'
+    );
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZNOH8T0R0Z0ZLleww0hGG1iHWW3IASTjiH7wmZFp4IzqYRQcnw_FKV-wi2lc9FDdLLxiJcmzImgPPxOoihuix5K6w_zY3u323RqFUS6lgRF-acnm8f755DVGVRRFkybkXd35lCqohpUFKHxfjbEnA7Aow=s1600-w800', 2
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJh6m6hYnGhkcRR_bST_f8rbA'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJh6m6hYnGhkcRR_bST_f8rbA')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZNOH8T0R0Z0ZLleww0hGG1iHWW3IASTjiH7wmZFp4IzqYRQcnw_FKV-wi2lc9FDdLLxiJcmzImgPPxOoihuix5K6w_zY3u323RqFUS6lgRF-acnm8f755DVGVRRFkybkXd35lCqohpUFKHxfjbEnA7Aow=s1600-w800'
+    );
+
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZMn44IuIOLonsE8D40sVVJHO-PkhC_ey58vVPnkYOfRh0dn57eaxeoaUU26uyZQydTz3mvWTnXuuBKpvBgHKHzxBpLhTYrgDfEi__g_nc2WxEz04kGK-omVt6us5Umzc-KFkl8JT6SccNJgFg=s1600-w800', 0
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJC8_RJATEhkcRVv1UDUzViDw'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJC8_RJATEhkcRVv1UDUzViDw')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZMn44IuIOLonsE8D40sVVJHO-PkhC_ey58vVPnkYOfRh0dn57eaxeoaUU26uyZQydTz3mvWTnXuuBKpvBgHKHzxBpLhTYrgDfEi__g_nc2WxEz04kGK-omVt6us5Umzc-KFkl8JT6SccNJgFg=s1600-w800'
+    );
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZOS159qM6RcOh5hgqH4JpAt_lVmmY3rWO0AyqrebTk_NX4aaun4l36xbKZwHo2as_0Dgf20fu0hu0TMX7Wo1m3kJCMtLyj6r3LxafsBPz1_RP-wm6FXoj3_fKobsb9BMVK6eVAq7CbUiNELsA=s1600-w800', 1
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJC8_RJATEhkcRVv1UDUzViDw'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJC8_RJATEhkcRVv1UDUzViDw')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZOS159qM6RcOh5hgqH4JpAt_lVmmY3rWO0AyqrebTk_NX4aaun4l36xbKZwHo2as_0Dgf20fu0hu0TMX7Wo1m3kJCMtLyj6r3LxafsBPz1_RP-wm6FXoj3_fKobsb9BMVK6eVAq7CbUiNELsA=s1600-w800'
+    );
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZPpql9Ayo_XMJK2uKLG9Dus3C8BgtcBheCSFiQ5hTiqFd0rXn9DDTOmK2bA6_XBE88FJJyLFl6V3XFvhAfY94u44GKRH9hYL4qYcSWqq1OaZujHqmXlMHvk3wWdsecblK17fhm_EAQ_v5k6Qg=s1600-w800', 2
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJC8_RJATEhkcRVv1UDUzViDw'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJC8_RJATEhkcRVv1UDUzViDw')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZPpql9Ayo_XMJK2uKLG9Dus3C8BgtcBheCSFiQ5hTiqFd0rXn9DDTOmK2bA6_XBE88FJJyLFl6V3XFvhAfY94u44GKRH9hYL4qYcSWqq1OaZujHqmXlMHvk3wWdsecblK17fhm_EAQ_v5k6Qg=s1600-w800'
+    );
+
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZNfg4cFzMzLAopGndUgIqk75W6ZyrnfLFJYC2uQjVgM4rzekYMEitNg5-0zZ-A0kzMRXgL_TQfu6XPNWu0PbJsjiujtLcEedyZchZ46iu7PjOsv6kgMeyB4dK41p20N7GzPj8YQSdZM7-Ew_g_WDkyF=s1600-w800', 0
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJUyHbFmzHhkcR1IWlJt9rW-Y'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJUyHbFmzHhkcR1IWlJt9rW-Y')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZNfg4cFzMzLAopGndUgIqk75W6ZyrnfLFJYC2uQjVgM4rzekYMEitNg5-0zZ-A0kzMRXgL_TQfu6XPNWu0PbJsjiujtLcEedyZchZ46iu7PjOsv6kgMeyB4dK41p20N7GzPj8YQSdZM7-Ew_g_WDkyF=s1600-w800'
+    );
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZM2bbTPuZ9FSMc87u-R25uVQZ5QhH9unzIqB3LINJJssKLAjCX6anW5ZOD1aomS8E4WtLSe5-XM58SO7JJMI8Jtm0r1iZ-8552JBneSn7B-DIDGUHYIbWrmR5zZpggPs44c3kPSZANyAvIeRNPo4vnm=s1600-w800', 1
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJUyHbFmzHhkcR1IWlJt9rW-Y'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJUyHbFmzHhkcR1IWlJt9rW-Y')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZM2bbTPuZ9FSMc87u-R25uVQZ5QhH9unzIqB3LINJJssKLAjCX6anW5ZOD1aomS8E4WtLSe5-XM58SO7JJMI8Jtm0r1iZ-8552JBneSn7B-DIDGUHYIbWrmR5zZpggPs44c3kPSZANyAvIeRNPo4vnm=s1600-w800'
+    );
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZOo1BbpSgqX_ebExNGS2HCphddx4DMx91H-Aw49UbHXOSDNa5TY8YKhVDZ2mDJzBEsVHTjA-Nux5999BrlxNKQKotZ6IlDsaBuBjR28lGTO--QbRFpRZhcpSX3uqMPonTKAdMIvmlIC1SUqGXenoaF3=s1600-w800', 2
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJUyHbFmzHhkcR1IWlJt9rW-Y'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJUyHbFmzHhkcR1IWlJt9rW-Y')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZOo1BbpSgqX_ebExNGS2HCphddx4DMx91H-Aw49UbHXOSDNa5TY8YKhVDZ2mDJzBEsVHTjA-Nux5999BrlxNKQKotZ6IlDsaBuBjR28lGTO--QbRFpRZhcpSX3uqMPonTKAdMIvmlIC1SUqGXenoaF3=s1600-w800'
+    );
+
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZM0442H7HFFvyKQIlZMnD1qEzEVH23eozeeKGfcp2wYB5ptJYbX3Ak6G-jNKpboVU58gSej2LhnM8FVEK7zlI1elfRdt4ev6bv83T7G7iHFmLX2abMGuOGtDXVfmYVqflDTjT38i7LVQsP4qQ=s1600-w800', 0
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJQ1CZo03BhkcR5Jyr1xS3VaY'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJQ1CZo03BhkcR5Jyr1xS3VaY')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZM0442H7HFFvyKQIlZMnD1qEzEVH23eozeeKGfcp2wYB5ptJYbX3Ak6G-jNKpboVU58gSej2LhnM8FVEK7zlI1elfRdt4ev6bv83T7G7iHFmLX2abMGuOGtDXVfmYVqflDTjT38i7LVQsP4qQ=s1600-w800'
+    );
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZNon5g1xdhMktg0i2A9OF5U-xCyfyBOZydmreJ6zOsWieKxEKQqqayLNKVcJ49LtUunLQ3uE136NxHM-rpR3v51wb9H3nMXub8_JTI8Q6IEjqI1hLO1xy_uz4rbae2KwGmqMh6Cv33kBauofw=s1600-w540', 1
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJQ1CZo03BhkcR5Jyr1xS3VaY'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJQ1CZo03BhkcR5Jyr1xS3VaY')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZNon5g1xdhMktg0i2A9OF5U-xCyfyBOZydmreJ6zOsWieKxEKQqqayLNKVcJ49LtUunLQ3uE136NxHM-rpR3v51wb9H3nMXub8_JTI8Q6IEjqI1hLO1xy_uz4rbae2KwGmqMh6Cv33kBauofw=s1600-w540'
+    );
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZOClEwLm_hC1mv1GOWYrveN-0LH_uxM3ySjxIafiUS1UikcnHCSVEjEKszXVSYHtNmrBbsbQJT_GrWdahoIVzMnIOzViyedBigaKergQsL_pzY3cT8c7KQp6l_u4rgXqdAqDXDKSw3vw7Gq6w=s1600-w800', 2
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJQ1CZo03BhkcR5Jyr1xS3VaY'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJQ1CZo03BhkcR5Jyr1xS3VaY')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZOClEwLm_hC1mv1GOWYrveN-0LH_uxM3ySjxIafiUS1UikcnHCSVEjEKszXVSYHtNmrBbsbQJT_GrWdahoIVzMnIOzViyedBigaKergQsL_pzY3cT8c7KQp6l_u4rgXqdAqDXDKSw3vw7Gq6w=s1600-w800'
+    );
+
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZNXkRSvTQiKGbWJrQ_7fAE9InUzfJfu-qXFPnIP9OOG1qqTcQC-dM3JB38mL0CEhBFh-NpIaMOvUmYklluOFYlQMz2uiIv1RQuG6q5LLqYCV7WCanGjGJnCz-4-teYlFhLM9s5grYAk-fZf6jAReokaLg=s1600-w800', 0
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJhXzSYgDBhkcRHDLvOJjMJrw'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJhXzSYgDBhkcRHDLvOJjMJrw')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZNXkRSvTQiKGbWJrQ_7fAE9InUzfJfu-qXFPnIP9OOG1qqTcQC-dM3JB38mL0CEhBFh-NpIaMOvUmYklluOFYlQMz2uiIv1RQuG6q5LLqYCV7WCanGjGJnCz-4-teYlFhLM9s5grYAk-fZf6jAReokaLg=s1600-w800'
+    );
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZM4vBR4eED_9WpkUcsf2G5ji7F1LceuCLBm3vYmj_CTj7FDuNa9jtX2ZccvvYczYkYSqbB5mpeySbOgKrVYQGmeaxGT0nnLWy6XOD-JKmpSE5wO06FRXF7r-MrzXZj6UcEa8aFcP_mYXwQLacGE5289=s1600-w800', 1
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJhXzSYgDBhkcRHDLvOJjMJrw'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJhXzSYgDBhkcRHDLvOJjMJrw')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZM4vBR4eED_9WpkUcsf2G5ji7F1LceuCLBm3vYmj_CTj7FDuNa9jtX2ZccvvYczYkYSqbB5mpeySbOgKrVYQGmeaxGT0nnLWy6XOD-JKmpSE5wO06FRXF7r-MrzXZj6UcEa8aFcP_mYXwQLacGE5289=s1600-w800'
+    );
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZPDN_7IEH48DntBXi4ndOdZsIRU7osf-U6rFBxjursFwOk_fhqsl08JoQFKBZ4j0RpXYskv4y9IO2Y54pdkq-ifB5DltUXYdmtxCbyM27mCvfi78ZM-VeKwjGEvdlvbI90IPbhIVBFunCK19GnG1UQQTw=s1600-w800', 2
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJhXzSYgDBhkcRHDLvOJjMJrw'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJhXzSYgDBhkcRHDLvOJjMJrw')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZPDN_7IEH48DntBXi4ndOdZsIRU7osf-U6rFBxjursFwOk_fhqsl08JoQFKBZ4j0RpXYskv4y9IO2Y54pdkq-ifB5DltUXYdmtxCbyM27mCvfi78ZM-VeKwjGEvdlvbI90IPbhIVBFunCK19GnG1UQQTw=s1600-w800'
+    );
+
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZNJiYvp6FWTi3p5GIlztGKTD5d0TnUE_d34e9hXluYatrOFrXhOcym8QTaL68LulcB9StWdkX89H43hK-HpIkkzHcrFHP7CMHCJ8eevbto_p4zIhppT7RdDs0HYBdComcMcqNSZTsQxIQgNWQy_te-sMg=s1600-w800', 0
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJIfqpH4jHhkcR-i9pwrlqTHM'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJIfqpH4jHhkcR-i9pwrlqTHM')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZNJiYvp6FWTi3p5GIlztGKTD5d0TnUE_d34e9hXluYatrOFrXhOcym8QTaL68LulcB9StWdkX89H43hK-HpIkkzHcrFHP7CMHCJ8eevbto_p4zIhppT7RdDs0HYBdComcMcqNSZTsQxIQgNWQy_te-sMg=s1600-w800'
+    );
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZPODnIg-MN1eO9iLxfrF7rJfjOOs-0ZQg-7ap_7WWyTc9_uVjWUxe0UxsYa9NclPnmIQHo6Z9Rs0sxzAN2uZG5rrzQbBDASiNTpusbTMxiI1GSIEVyi6leDFziGOfGIi8MWlWx2DSDlyCfCSMdWeem-Uw=s1600-w800', 1
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJIfqpH4jHhkcR-i9pwrlqTHM'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJIfqpH4jHhkcR-i9pwrlqTHM')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZPODnIg-MN1eO9iLxfrF7rJfjOOs-0ZQg-7ap_7WWyTc9_uVjWUxe0UxsYa9NclPnmIQHo6Z9Rs0sxzAN2uZG5rrzQbBDASiNTpusbTMxiI1GSIEVyi6leDFziGOfGIi8MWlWx2DSDlyCfCSMdWeem-Uw=s1600-w800'
+    );
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZMGV843Src_FzRphe40UUePQv2TNpkTu8CNWVgd4wucs15s7ZOrRH6A2zDAnbPoFRVnVrvfhdv4qy1u6U-rt1MQkRABsfwU-62CA9Hpp3O5r8KfGUZXft_dz6hp5oSnCo4eVikFaWCNz8MuZlIh_aj5=s1600-w800', 2
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJIfqpH4jHhkcR-i9pwrlqTHM'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJIfqpH4jHhkcR-i9pwrlqTHM')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZMGV843Src_FzRphe40UUePQv2TNpkTu8CNWVgd4wucs15s7ZOrRH6A2zDAnbPoFRVnVrvfhdv4qy1u6U-rt1MQkRABsfwU-62CA9Hpp3O5r8KfGUZXft_dz6hp5oSnCo4eVikFaWCNz8MuZlIh_aj5=s1600-w800'
+    );
+
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZMstuf5jAAVus9HM7-4SWP_7fOxt0E6KZZjweONE0B-nG4qHf4RynNPW9FhGTbw73AeEM5u37IiCYnyL2BwhjBdIxhmz7tNvVwUqP92k1pFY06dViwEa8DNGas0UcwZi6a2qmLVo45diHfT=s1600-w800', 0
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJd3LVchnHhkcR_iOYKoze7vE'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJd3LVchnHhkcR_iOYKoze7vE')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZMstuf5jAAVus9HM7-4SWP_7fOxt0E6KZZjweONE0B-nG4qHf4RynNPW9FhGTbw73AeEM5u37IiCYnyL2BwhjBdIxhmz7tNvVwUqP92k1pFY06dViwEa8DNGas0UcwZi6a2qmLVo45diHfT=s1600-w800'
+    );
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZN8MLysOup17uAFpK2hjh_ENYt6DMp7q_VWdGWCtGYJm4jvpPiW_xjyFiNl4B5agheTnykTJaiMtCBV5Eg7Ok0AiGFQIVpBSJcuRQ4FtZqMa54lpBCDrYB5km0wmGdRKuHLkLSso94X3nztag=s1600-w800', 1
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJd3LVchnHhkcR_iOYKoze7vE'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJd3LVchnHhkcR_iOYKoze7vE')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZN8MLysOup17uAFpK2hjh_ENYt6DMp7q_VWdGWCtGYJm4jvpPiW_xjyFiNl4B5agheTnykTJaiMtCBV5Eg7Ok0AiGFQIVpBSJcuRQ4FtZqMa54lpBCDrYB5km0wmGdRKuHLkLSso94X3nztag=s1600-w800'
+    );
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZPr6U2OSOHuAsAzHajjPLH4m2F54r5Qd3E4KLdJ9wttFi__OMY28oblU9YYwf0ccKwRYwvh5Hc5UBZymO_oBVgou2L5_cZ6dzl9heS-q_xtV-_tPAIumNrytP_oW92QwnfEsDHh5ODBbk5eYFLCw3k8iw=s1600-w800', 2
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJd3LVchnHhkcR_iOYKoze7vE'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJd3LVchnHhkcR_iOYKoze7vE')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZPr6U2OSOHuAsAzHajjPLH4m2F54r5Qd3E4KLdJ9wttFi__OMY28oblU9YYwf0ccKwRYwvh5Hc5UBZymO_oBVgou2L5_cZ6dzl9heS-q_xtV-_tPAIumNrytP_oW92QwnfEsDHh5ODBbk5eYFLCw3k8iw=s1600-w800'
+    );
+
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZM5ybbrHZvb5QU9oWYWWFHlXB4wdH69UFqNDUPp2-VeEOlKGMrG82TquceRgM1yOKNgacUeoQpBwvmIK8Z3IuSitWBKXBdWqPka7Y8D9An2yc-bwt3MpgrZUJOF_uvdkgz5dGFhMmHMK-Ldzs5JJYuj_A=s1600-w800', 0
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJtebRLgDFhkcReBEVADaLeEM'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJtebRLgDFhkcReBEVADaLeEM')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZM5ybbrHZvb5QU9oWYWWFHlXB4wdH69UFqNDUPp2-VeEOlKGMrG82TquceRgM1yOKNgacUeoQpBwvmIK8Z3IuSitWBKXBdWqPka7Y8D9An2yc-bwt3MpgrZUJOF_uvdkgz5dGFhMmHMK-Ldzs5JJYuj_A=s1600-w800'
+    );
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZPWPZyqiGxiilj7MRc70z5Th3tN35B9f92YugJw4hnaxEB6nz0xyTJLjaK-ou9MUKElwTx9SkuDjyOiVinY9y8ZmZHqoQvtBQlv7JbmqJ3AbramECkstBGU2MRFEDhjnmvzV4qvSOuTpEgk4uJ_AVNbrA=s1600-w800', 1
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJtebRLgDFhkcReBEVADaLeEM'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJtebRLgDFhkcReBEVADaLeEM')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZPWPZyqiGxiilj7MRc70z5Th3tN35B9f92YugJw4hnaxEB6nz0xyTJLjaK-ou9MUKElwTx9SkuDjyOiVinY9y8ZmZHqoQvtBQlv7JbmqJ3AbramECkstBGU2MRFEDhjnmvzV4qvSOuTpEgk4uJ_AVNbrA=s1600-w800'
+    );
+  INSERT INTO public.photos (lurido_id, url, sort_order)
+  SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZOSE32fv75GuGwRrJubph5XHph3Cx0DsXAV0sQzvyUaHLl0KRRkwvA99fWD50jeiLrLkOnrDoDwcgc8gJSECVv4eIjS0KE7-mJY4vovidQBVlxLrom-k2lLerQ6shi-ai00_TUHVgO9PrnUnHcSz2O3bg=s1600-w800', 2
+  FROM public.luridi
+  WHERE google_place_id = 'ChIJtebRLgDFhkcReBEVADaLeEM'
+    AND NOT EXISTS (
+      SELECT 1 FROM public.photos p2
+      WHERE p2.lurido_id = (SELECT id FROM public.luridi WHERE google_place_id = 'ChIJtebRLgDFhkcReBEVADaLeEM')
+        AND p2.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZOSE32fv75GuGwRrJubph5XHph3Cx0DsXAV0sQzvyUaHLl0KRRkwvA99fWD50jeiLrLkOnrDoDwcgc8gJSECVv4eIjS0KE7-mJY4vovidQBVlxLrom-k2lLerQ6shi-ai00_TUHVgO9PrnUnHcSz2O3bg=s1600-w800'
+    );

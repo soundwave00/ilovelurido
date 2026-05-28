@@ -1,0 +1,153 @@
+-- Generato da scripts/fix-luridi-data.mjs il 2026-05-28
+-- Aggiorna google_place_id, orari e inserisce foto per luridi del seed.
+-- PREREQUISITO: migration 0004 eseguita.
+
+-- anche-forno
+UPDATE public.luridi SET google_place_id = 'ChIJWxqgLgDBhkcRSUFBUj7l5Dw' WHERE slug = 'anche-forno' AND (google_place_id IS NULL OR google_place_id = '');
+UPDATE public.luridi SET hours = '{"sun":["18:30","02:00"],"mon":["18:30","02:00"],"tue":["18:30","02:00"],"wed":["18:30","02:00"],"thu":["18:30","02:00"],"fri":["18:30","04:00"],"sat":["18:30","04:00"]}'::jsonb WHERE slug = 'anche-forno';
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZOjXo39Mk8L5AnmqMANNSGCSVmmLRtfePeej5NiryaEasd1mDYqByvUpp22zPZvQAHw6_gJJMCqrMgQwsIY9LKG8VjoqSNPL-Ha_JfBgh6z-1zWquXo_14vmA7z2oxszoK1rGIN0wdOrzHjgWr5eV1gig=s1600-w800', 0 FROM public.luridi WHERE slug = 'anche-forno'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'anche-forno') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZOjXo39Mk8L5AnmqMANNSGCSVmmLRtfePeej5NiryaEasd1mDYqByvUpp22zPZvQAHw6_gJJMCqrMgQwsIY9LKG8VjoqSNPL-Ha_JfBgh6z-1zWquXo_14vmA7z2oxszoK1rGIN0wdOrzHjgWr5eV1gig=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZOWlwO-ZJCmn8H5g-iaF6ehNRRdxRzV0fyp-XfCM0wng2ydVTcycZsblUKCTc6cPwFu_zMMFAJC3adWD4dNBdoiBwI3t1OwMmIuF0KnCrGqV5fdzXQVruoCqS7u9lmIP2CSzvbzsdUbju25ug=s1600-w800', 1 FROM public.luridi WHERE slug = 'anche-forno'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'anche-forno') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZOWlwO-ZJCmn8H5g-iaF6ehNRRdxRzV0fyp-XfCM0wng2ydVTcycZsblUKCTc6cPwFu_zMMFAJC3adWD4dNBdoiBwI3t1OwMmIuF0KnCrGqV5fdzXQVruoCqS7u9lmIP2CSzvbzsdUbju25ug=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZN2_jhtK_hu8EdXPEtbJrE7GHBHqLEQo9THB9vNx9aVQSsvhBsUGNWWKco3YaCaMrhi8MgHNbtHBGdKkbzeYanyF5871PwqlWJSQ10G7MH-FOWq0d02kF7L1ew3Alk6spcBlzFpE7P2MOfX8dREU4dhpQ=s1600-w800', 2 FROM public.luridi WHERE slug = 'anche-forno'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'anche-forno') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZN2_jhtK_hu8EdXPEtbJrE7GHBHqLEQo9THB9vNx9aVQSsvhBsUGNWWKco3YaCaMrhi8MgHNbtHBGdKkbzeYanyF5871PwqlWJSQ10G7MH-FOWq0d02kF7L1ew3Alk6spcBlzFpE7P2MOfX8dREU4dhpQ=s1600-w800');
+
+-- chiosco-maradona
+UPDATE public.luridi SET google_place_id = 'ChIJBeGb8ErFhkcRNi1s9fbV_M8' WHERE slug = 'chiosco-maradona' AND (google_place_id IS NULL OR google_place_id = '');
+UPDATE public.luridi SET hours = '{"sun":["21:30","03:00"],"mon":["21:30","03:00"],"tue":["21:30","03:00"],"wed":["21:30","03:00"],"thu":["21:30","03:00"],"fri":["21:30","04:00"],"sat":["21:30","04:00"]}'::jsonb WHERE slug = 'chiosco-maradona';
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/places/ANXAkqFZa_bBuQX0Cpmug57NNmNep93hHtdXY3mvtL3JaoS492Zfbf4VupYrRYHIhjSlKLv3i9svFJA6hOkx6LX9Nt6RVTkgSKtzniU=s1600-w800', 0 FROM public.luridi WHERE slug = 'chiosco-maradona'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'chiosco-maradona') AND p.url = 'https://lh3.googleusercontent.com/places/ANXAkqFZa_bBuQX0Cpmug57NNmNep93hHtdXY3mvtL3JaoS492Zfbf4VupYrRYHIhjSlKLv3i9svFJA6hOkx6LX9Nt6RVTkgSKtzniU=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZPN_ohF3cVwEdvDmC0Hcfc_ragfKpZQ8KRy0ts5BaQLXams4vucVjY2bndabEnFkA6PvlyRy1BHnvBqpCe-LcjtLgurcQZ1ayfppze8tVRxdbPTVUbvUUDt45vHcxqbuoXfNI5_LW4gyrL9R8QPxgsvvQ=s1600-w800', 1 FROM public.luridi WHERE slug = 'chiosco-maradona'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'chiosco-maradona') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZPN_ohF3cVwEdvDmC0Hcfc_ragfKpZQ8KRy0ts5BaQLXams4vucVjY2bndabEnFkA6PvlyRy1BHnvBqpCe-LcjtLgurcQZ1ayfppze8tVRxdbPTVUbvUUDt45vHcxqbuoXfNI5_LW4gyrL9R8QPxgsvvQ=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZOer3JJpbyV-X1IYeWTARQrEtRXc-6GOG_icgqGQpMEGH3ECX7AMCnWqom7sQA4CO4JaFtpVlLqgR9MSXTOQ-Clrjg995v9F8xyDD8zeEjYaml-N5xif0pIBzZokSakSxAVQVKDwTYEPuxsx-k=s1600-w800', 2 FROM public.luridi WHERE slug = 'chiosco-maradona'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'chiosco-maradona') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZOer3JJpbyV-X1IYeWTARQrEtRXc-6GOG_icgqGQpMEGH3ECX7AMCnWqom7sQA4CO4JaFtpVlLqgR9MSXTOQ-Clrjg995v9F8xyDD8zeEjYaml-N5xif0pIBzZokSakSxAVQVKDwTYEPuxsx-k=s1600-w800');
+
+-- pandy-e-mucca
+UPDATE public.luridi SET google_place_id = 'ChIJY2EezyDEhkcRka1DlZjhkmw' WHERE slug = 'pandy-e-mucca' AND (google_place_id IS NULL OR google_place_id = '');
+UPDATE public.luridi SET hours = '{"mon":["17:00","02:00"],"tue":["17:00","02:00"],"wed":["17:00","02:00"],"thu":["17:00","02:00"],"fri":["17:00","04:00"],"sat":["17:00","04:00"]}'::jsonb WHERE slug = 'pandy-e-mucca';
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZPNA9a78zJJ64uw7Jf60lgkeVMaQt1aKv6pN21RNdFp_CdDvJeul3RGHBIcoEbwWM3KrS1HW25TVKROCTuYfEIHMBDeOiI__3Vxh0DbeKEv1N-KOjBsPQ1RHu5aHKPxgVbjIUAb595loPnLVJ4=s1600-w800', 0 FROM public.luridi WHERE slug = 'pandy-e-mucca'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'pandy-e-mucca') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZPNA9a78zJJ64uw7Jf60lgkeVMaQt1aKv6pN21RNdFp_CdDvJeul3RGHBIcoEbwWM3KrS1HW25TVKROCTuYfEIHMBDeOiI__3Vxh0DbeKEv1N-KOjBsPQ1RHu5aHKPxgVbjIUAb595loPnLVJ4=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZMj7mU4RwyMRDk_pEjlKoZSxomUzQmO1nnhbYEbPbFhX33IG9BCr2C9e8-d1INBiwW-X8Gh89xhT8OCt1U7MTHc0e5lq2VDUyMSccYtqY5F5gMy8LBHU9ChQd5mywX_KH0fxyi83_qxp6Cn8Q=s1600-w768', 1 FROM public.luridi WHERE slug = 'pandy-e-mucca'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'pandy-e-mucca') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZMj7mU4RwyMRDk_pEjlKoZSxomUzQmO1nnhbYEbPbFhX33IG9BCr2C9e8-d1INBiwW-X8Gh89xhT8OCt1U7MTHc0e5lq2VDUyMSccYtqY5F5gMy8LBHU9ChQd5mywX_KH0fxyi83_qxp6Cn8Q=s1600-w768');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZNNkeJ5YmYV65r_83q5HHYIBKsgVyLPSYbd_aKVLL1Gwz5TCl3kpCAzRKfkE7MRtMM9l6-MOrAwSM8p7IZlgeQC1nWEYLr142A7VKTbwnZdeIoFxGm1_TZ92lXrmBMpPFm4QrUTnYbzbnANCA=s1600-w800', 2 FROM public.luridi WHERE slug = 'pandy-e-mucca'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'pandy-e-mucca') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZNNkeJ5YmYV65r_83q5HHYIBKsgVyLPSYbd_aKVLL1Gwz5TCl3kpCAzRKfkE7MRtMM9l6-MOrAwSM8p7IZlgeQC1nWEYLr142A7VKTbwnZdeIoFxGm1_TZ92lXrmBMpPFm4QrUTnYbzbnANCA=s1600-w800');
+
+-- al-boschetto-da-gabry
+UPDATE public.luridi SET google_place_id = 'ChIJi0SOZrvHhkcRoGLEN7Zhxeg' WHERE slug = 'al-boschetto-da-gabry' AND (google_place_id IS NULL OR google_place_id = '');
+UPDATE public.luridi SET hours = '{"mon":["11:00","06:00"],"tue":["11:00","06:00"],"wed":["11:00","06:00"],"thu":["11:00","06:00"],"fri":["11:00","06:00"],"sat":["11:00","06:00"]}'::jsonb WHERE slug = 'al-boschetto-da-gabry';
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZP07xSkemXy8qHMU8zVUD5iopgBtTXYzGOv21YTvSdEwfUMu84YJ4E_EyIK01kjl3W_jnLAN2QLO9ZL28EHenTyb_eedL5FnXqkPL_IVRCRWMG6bab03MSAzrYcF5KuyLW_79qH0Ch6M_iu=s1600-w750', 0 FROM public.luridi WHERE slug = 'al-boschetto-da-gabry'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'al-boschetto-da-gabry') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZP07xSkemXy8qHMU8zVUD5iopgBtTXYzGOv21YTvSdEwfUMu84YJ4E_EyIK01kjl3W_jnLAN2QLO9ZL28EHenTyb_eedL5FnXqkPL_IVRCRWMG6bab03MSAzrYcF5KuyLW_79qH0Ch6M_iu=s1600-w750');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZMBayuEj-OSJ6w1shcE0loe0pJs9H8M2KvBlfHUbtB7i5K_4WRNF5Ou9uNps-IS2Q1kub-gQCSTxy9h5754e1YYTlRFq7h7xCcNs9p2gKOFFV8pcZFe7Ic_vAfy37QmZekG-rqGVaa8cEzm=s1600-w800', 1 FROM public.luridi WHERE slug = 'al-boschetto-da-gabry'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'al-boschetto-da-gabry') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZMBayuEj-OSJ6w1shcE0loe0pJs9H8M2KvBlfHUbtB7i5K_4WRNF5Ou9uNps-IS2Q1kub-gQCSTxy9h5754e1YYTlRFq7h7xCcNs9p2gKOFFV8pcZFe7Ic_vAfy37QmZekG-rqGVaa8cEzm=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZMF9hdQ7v_lcnwjto99aRcisuyD83s10vpnzT_oPzTjW9RfgSo7czODhXRJUIrEiJSUv2UMCDF5483K0N3P-y0L6jd3QpWNQn1_2nVd6usDegpkB1qmAEbTkPaWhD3aRFW8JOk4-_fZAKm-E54=s1600-w800', 2 FROM public.luridi WHERE slug = 'al-boschetto-da-gabry'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'al-boschetto-da-gabry') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZMF9hdQ7v_lcnwjto99aRcisuyD83s10vpnzT_oPzTjW9RfgSo7czODhXRJUIrEiJSUv2UMCDF5483K0N3P-y0L6jd3QpWNQn1_2nVd6usDegpkB1qmAEbTkPaWhD3aRFW8JOk4-_fZAKm-E54=s1600-w800');
+
+-- chiosco-gio-giovanni-panetta
+UPDATE public.luridi SET google_place_id = 'ChIJd8tBwfjBhkcROEy5PHpV-64' WHERE slug = 'chiosco-gio-giovanni-panetta' AND (google_place_id IS NULL OR google_place_id = '');
+UPDATE public.luridi SET hours = '{"sun":["09:00","23:00"],"mon":["09:00","23:00"],"tue":["09:00","23:00"],"wed":["09:00","23:00"],"thu":["09:00","23:00"],"fri":["08:00","01:30"],"sat":["08:00","02:00"]}'::jsonb WHERE slug = 'chiosco-gio-giovanni-panetta';
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZN_V2yreNKKNPq8cfVOD3uhmPce-VZbmjgOouxAUBrfRXnzUdffH6YogQhTi5o-qYidXalByYivU3TfK5V1hMTkD9YAlIdfeTpCnUowr5HSN1tk23TpmuzBpo9Q2HQeSnpnZd8vuYZVKaXxGzQ=s1600-w800', 0 FROM public.luridi WHERE slug = 'chiosco-gio-giovanni-panetta'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'chiosco-gio-giovanni-panetta') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZN_V2yreNKKNPq8cfVOD3uhmPce-VZbmjgOouxAUBrfRXnzUdffH6YogQhTi5o-qYidXalByYivU3TfK5V1hMTkD9YAlIdfeTpCnUowr5HSN1tk23TpmuzBpo9Q2HQeSnpnZd8vuYZVKaXxGzQ=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZPeHIQ3GwafgNauiB7BGgpggWOeX0KrUJX44n-e1RwiT4nShMJLKzs5-jGILC6Rp_HLjNpW4-pzHWx2j4oIH84jRqqZajklV4coBFhY1GJsI-ZMmeorg-ven4JFI--lApN9R7MZJEWtO_2YsD8=s1600-w800', 1 FROM public.luridi WHERE slug = 'chiosco-gio-giovanni-panetta'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'chiosco-gio-giovanni-panetta') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZPeHIQ3GwafgNauiB7BGgpggWOeX0KrUJX44n-e1RwiT4nShMJLKzs5-jGILC6Rp_HLjNpW4-pzHWx2j4oIH84jRqqZajklV4coBFhY1GJsI-ZMmeorg-ven4JFI--lApN9R7MZJEWtO_2YsD8=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZNtRSCyV7SdF98ZrT5YZjuh9HundX4NiSfYKSWQRX2oQtHUkbuPCwNDbx1tR7_soCPnbz6E95ndbM03bPa3KsLbRTevQel4K5qsC_IRz-w_80VZowa1YxnDfVlPhX3qMrFq-Dyr-WszQC9IXlM=s1600-w800', 2 FROM public.luridi WHERE slug = 'chiosco-gio-giovanni-panetta'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'chiosco-gio-giovanni-panetta') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZNtRSCyV7SdF98ZrT5YZjuh9HundX4NiSfYKSWQRX2oQtHUkbuPCwNDbx1tR7_soCPnbz6E95ndbM03bPa3KsLbRTevQel4K5qsC_IRz-w_80VZowa1YxnDfVlPhX3qMrFq-Dyr-WszQC9IXlM=s1600-w800');
+
+-- bar-quadronno
+UPDATE public.luridi SET google_place_id = 'ChIJ58IXWxzEhkcRwPJjW_Bcsy0' WHERE slug = 'bar-quadronno' AND (google_place_id IS NULL OR google_place_id = '');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZN8lNSlK8B0TBT3h0dv4dEnjf-jQSAxhFyQoBsoLH0u3T62qAgRkd_GqubhdWRXRBiyZq_TpWZ3pAm7oY3j84p_S_Ei_RoHLNttvnMODHv5oPnTGqKPW5B1SKw3vM9EUDFqnjAxQYxEW-glMnKcDNCdlA=s1600-w388', 0 FROM public.luridi WHERE slug = 'bar-quadronno'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'bar-quadronno') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZN8lNSlK8B0TBT3h0dv4dEnjf-jQSAxhFyQoBsoLH0u3T62qAgRkd_GqubhdWRXRBiyZq_TpWZ3pAm7oY3j84p_S_Ei_RoHLNttvnMODHv5oPnTGqKPW5B1SKw3vM9EUDFqnjAxQYxEW-glMnKcDNCdlA=s1600-w388');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZORmvC3hJLEvQ4V8yI7h7B4HtKxbZ5IKlaZIvvBerYoGh71Ddl6Th2l32vSHox_a4GbM7r3AzBZTxvQGUlsMXxRQJz8GDGlYUchIiVWa74UUUCx3LpXo3_5yufCGVlsx0_WYG3-lSQsfKQmcnE=s1600-w800', 1 FROM public.luridi WHERE slug = 'bar-quadronno'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'bar-quadronno') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZORmvC3hJLEvQ4V8yI7h7B4HtKxbZ5IKlaZIvvBerYoGh71Ddl6Th2l32vSHox_a4GbM7r3AzBZTxvQGUlsMXxRQJz8GDGlYUchIiVWa74UUUCx3LpXo3_5yufCGVlsx0_WYG3-lSQsfKQmcnE=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZM1Qu03frU2PapRazoJWWCapFZ_9byb1b8nNgp6Ou6I31PaRfsv-Ewrj-V-dVsYtuEXNM-tCYI3EMMsiQooQdbR17m7sCQcJAL5EsEjU4HF7wj972y0lszviB4mBsXkOYLnM-b1sCZywUy4zsKVn6BU=s1600-w800', 2 FROM public.luridi WHERE slug = 'bar-quadronno'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'bar-quadronno') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZM1Qu03frU2PapRazoJWWCapFZ_9byb1b8nNgp6Ou6I31PaRfsv-Ewrj-V-dVsYtuEXNM-tCYI3EMMsiQooQdbR17m7sCQcJAL5EsEjU4HF7wj972y0lszviB4mBsXkOYLnM-b1sCZywUy4zsKVn6BU=s1600-w800');
+
+-- isola-verde
+UPDATE public.luridi SET google_place_id = 'ChIJVSxHGITBhkcRgsieP8ZKip0' WHERE slug = 'isola-verde' AND (google_place_id IS NULL OR google_place_id = '');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZP2tnHr-qRz17DKTDFfsPnJvzVYwIqXRXL3eAhm6tByqX49gNYbJlc6o25DG0DUGYNX_tIxmtYhU-iByNp8DAkFlZtb4vCgaik-Ds_MX4mB6qNSSM5srxcfuq_fkgYjkhaEMNKIAbQZJkqudw=s1600-w800', 0 FROM public.luridi WHERE slug = 'isola-verde'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'isola-verde') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZP2tnHr-qRz17DKTDFfsPnJvzVYwIqXRXL3eAhm6tByqX49gNYbJlc6o25DG0DUGYNX_tIxmtYhU-iByNp8DAkFlZtb4vCgaik-Ds_MX4mB6qNSSM5srxcfuq_fkgYjkhaEMNKIAbQZJkqudw=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/places/ANXAkqGITUCCoGv1PQtVtvLN5icd8BODJRKXsWACHzSejMRu1g0zTkwmmA5hp76lQTIcJ9hN6ZWlsrYHqHo8cjOD-Zl0NKroiZmcILE=s1600-w800', 1 FROM public.luridi WHERE slug = 'isola-verde'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'isola-verde') AND p.url = 'https://lh3.googleusercontent.com/places/ANXAkqGITUCCoGv1PQtVtvLN5icd8BODJRKXsWACHzSejMRu1g0zTkwmmA5hp76lQTIcJ9hN6ZWlsrYHqHo8cjOD-Zl0NKroiZmcILE=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZNwLk-iiig-aNTaePRvr6qbPViZ9g0mESaq5SITamBP0HJz2yxbKBnEB5vWD05jbJxIPzJFpfEqQsfJMztuOlVLON4trpoJHzFaM948dwjH0gG4OfIJqHWG8g_WAQNAzfPPf3zqN55pvDEi=s1600-w800', 2 FROM public.luridi WHERE slug = 'isola-verde'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'isola-verde') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZNwLk-iiig-aNTaePRvr6qbPViZ9g0mESaq5SITamBP0HJz2yxbKBnEB5vWD05jbJxIPzJFpfEqQsfJMztuOlVLON4trpoJHzFaM948dwjH0gG4OfIJqHWG8g_WAQNAzfPPf3zqN55pvDEi=s1600-w800');
+
+-- le-capannelle
+UPDATE public.luridi SET google_place_id = 'ChIJ68YhgFjBhkcRb3Bw71LDV94' WHERE slug = 'le-capannelle' AND (google_place_id IS NULL OR google_place_id = '');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZPyQe-HR6_6r1S02MwT7a1ZywOGWJaYjzAkqVUEUN2-GK-HMxZOTBgXrHD1Vq-jwIz38o0A91aStMRG6FinkeB_PMNOM2vu8opwUL62Is1H8PcOoOatBjT6fTfEuZ9dovIutC7RxeJQjIMTQCc=s1600-w800', 0 FROM public.luridi WHERE slug = 'le-capannelle'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'le-capannelle') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZPyQe-HR6_6r1S02MwT7a1ZywOGWJaYjzAkqVUEUN2-GK-HMxZOTBgXrHD1Vq-jwIz38o0A91aStMRG6FinkeB_PMNOM2vu8opwUL62Is1H8PcOoOatBjT6fTfEuZ9dovIutC7RxeJQjIMTQCc=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZMujbPYOR4gnWwUa3XSuOTKnrs5Zoahv8LiZgWKLhmgglRN7X1QjoZ45TXTfKlq5h-xKBy0dc7YFnSAs203cIgsyNPLW6s6I-e2a12Oe7BP3re_y2zfZ8Z_nrJctyJMr2hlm8BFS9uJu9XjtA=s1600-w800', 1 FROM public.luridi WHERE slug = 'le-capannelle'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'le-capannelle') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZMujbPYOR4gnWwUa3XSuOTKnrs5Zoahv8LiZgWKLhmgglRN7X1QjoZ45TXTfKlq5h-xKBy0dc7YFnSAs203cIgsyNPLW6s6I-e2a12Oe7BP3re_y2zfZ8Z_nrJctyJMr2hlm8BFS9uJu9XjtA=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZNIT5mF8dGMkch3hBjwKd2s5GU2ZPASdGabQG2E0lo184CpjSz9wSM6uJIbNH3rAs7h7-gNhIC1lAqWOViGrTbOzXhjy9SP9MD0ikjpywpLRo1DCFPrZnng7My_jvECEMpabG5ajfqwkh9Sy4o=s1600-w800', 2 FROM public.luridi WHERE slug = 'le-capannelle'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'le-capannelle') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZNIT5mF8dGMkch3hBjwKd2s5GU2ZPASdGabQG2E0lo184CpjSz9wSM6uJIbNH3rAs7h7-gNhIC1lAqWOViGrTbOzXhjy9SP9MD0ikjpywpLRo1DCFPrZnng7My_jvECEMpabG5ajfqwkh9Sy4o=s1600-w800');
+
+-- margy-burger
+UPDATE public.luridi SET google_place_id = 'ChIJM0osU6_GhkcR28eiK1k1sKc' WHERE slug = 'margy-burger' AND (google_place_id IS NULL OR google_place_id = '');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZPDN3p7nk2bYvAurCoirNo-j_Bk0V8y8byxyO_VF2Fr-jpGXjSSifMOOulxqtissIE1RkWwc8_kjKdt9nWqjS1FpgLv3g7tgp5gvZVeGKM1XlbaD6apjgSuqWb9cN4VQDagiq5OOC13PZCxiYNXDHAs=s1600-w800', 0 FROM public.luridi WHERE slug = 'margy-burger'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'margy-burger') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZPDN3p7nk2bYvAurCoirNo-j_Bk0V8y8byxyO_VF2Fr-jpGXjSSifMOOulxqtissIE1RkWwc8_kjKdt9nWqjS1FpgLv3g7tgp5gvZVeGKM1XlbaD6apjgSuqWb9cN4VQDagiq5OOC13PZCxiYNXDHAs=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/places/ANXAkqHp3ceA0RiFkIl46JZc8HZ4XpRzsNZYW9ZJseIJi9veVdDetC73FOBU7NnMZaFp_ZDSzdNEhim0up1K24rbNkXdIt0aFoAm5iw=s1600-w800', 1 FROM public.luridi WHERE slug = 'margy-burger'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'margy-burger') AND p.url = 'https://lh3.googleusercontent.com/places/ANXAkqHp3ceA0RiFkIl46JZc8HZ4XpRzsNZYW9ZJseIJi9veVdDetC73FOBU7NnMZaFp_ZDSzdNEhim0up1K24rbNkXdIt0aFoAm5iw=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZMml_kTEf4RK24UsG7pavTXsLDTZBJL2EDsXcsIL5YS4FmiRLqb-YkAIVHqmB7nB1HNTuvhVuxHjDXWn0LEB6iTqGOC3_DBHVrFRgL07sWo-Ot0lzdC5Mpa3Sf4mw2o8XNvouVAycDhWs8JoTUJjGeZ=s1600-w800', 2 FROM public.luridi WHERE slug = 'margy-burger'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'margy-burger') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZMml_kTEf4RK24UsG7pavTXsLDTZBJL2EDsXcsIL5YS4FmiRLqb-YkAIVHqmB7nB1HNTuvhVuxHjDXWn0LEB6iTqGOC3_DBHVrFRgL07sWo-Ot0lzdC5Mpa3Sf4mw2o8XNvouVAycDhWs8JoTUJjGeZ=s1600-w800');
+
+-- calafuria
+UPDATE public.luridi SET google_place_id = 'ChIJ45UTYdXAhkcRrFatP6cCmxA' WHERE slug = 'calafuria' AND (google_place_id IS NULL OR google_place_id = '');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZMKWEy9i0V5YVVGdVaLaIzYZSXoGaHQAFj7vlBxDzKrtU5bB1nA2MyNf1LMMvDDidjZ563DB0Mf-SMbcLUSzCIAtX9v-ok-P2O-9lQS384v3WuwoU7funOusOMr8nWnBWIxfp85RKIN7XRfwVw5dTHRTg=s1600-w800', 0 FROM public.luridi WHERE slug = 'calafuria'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'calafuria') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZMKWEy9i0V5YVVGdVaLaIzYZSXoGaHQAFj7vlBxDzKrtU5bB1nA2MyNf1LMMvDDidjZ563DB0Mf-SMbcLUSzCIAtX9v-ok-P2O-9lQS384v3WuwoU7funOusOMr8nWnBWIxfp85RKIN7XRfwVw5dTHRTg=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZP8j2qtvxyMvSG5qBOAat6VySqyIpIC5zhQEaG1HPfcwSNWLWIsZs-zDWMs_k30XxF3zHj1SQyWwjy9wDD2f1b9WyAD4gm9Xe-gI2GjXS2Us2-trTst2iqxMQUstH3V1T0YUXPOOkTUnqOjkMU=s1600-w800', 1 FROM public.luridi WHERE slug = 'calafuria'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'calafuria') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZP8j2qtvxyMvSG5qBOAat6VySqyIpIC5zhQEaG1HPfcwSNWLWIsZs-zDWMs_k30XxF3zHj1SQyWwjy9wDD2f1b9WyAD4gm9Xe-gI2GjXS2Us2-trTst2iqxMQUstH3V1T0YUXPOOkTUnqOjkMU=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZPiWapa7qQ3xmOUsaxNk_cXT44eVQD46_NTSg4frfI7MyQ02q0gZVw5SqqpuwTWm7IqegB4ZpYeox4IWcS-AMAHXrprqQIlYSxXweLnix1u_am6g4vRF9uAAoZSAz2Gh-woQPvYFn2pEz1b9Av1eVZkYw=s1600-w800', 2 FROM public.luridi WHERE slug = 'calafuria'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'calafuria') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZPiWapa7qQ3xmOUsaxNk_cXT44eVQD46_NTSg4frfI7MyQ02q0gZVw5SqqpuwTWm7IqegB4ZpYeox4IWcS-AMAHXrprqQIlYSxXweLnix1u_am6g4vRF9uAAoZSAz2Gh-woQPvYFn2pEz1b9Av1eVZkYw=s1600-w800');
+
+-- forno-di-barona
+UPDATE public.luridi SET google_place_id = 'ChIJ1bHJU7zDhkcRv7vjOgerbN8' WHERE slug = 'forno-di-barona' AND (google_place_id IS NULL OR google_place_id = '');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZMID8AVkj0EgSyxNKCKg5KbYw2LurlF0iYt8QyHwwAwXH3-VKcxZCccWCPkRjdbMjEoPtpMael8sDOcJUn4BGuALPM_hky7516HqRme2qnNrgaby1Nl3_e4De52Ntq3rgwPWjZKlnLBvz-hyS4=s1600-w800', 0 FROM public.luridi WHERE slug = 'forno-di-barona'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'forno-di-barona') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZMID8AVkj0EgSyxNKCKg5KbYw2LurlF0iYt8QyHwwAwXH3-VKcxZCccWCPkRjdbMjEoPtpMael8sDOcJUn4BGuALPM_hky7516HqRme2qnNrgaby1Nl3_e4De52Ntq3rgwPWjZKlnLBvz-hyS4=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZPvMa-8UsjTo1p27Y2iD2IJHUowNWPzaSWaYVyy7XiPJNlCxcR3heHUKWNAq6OvQwXtJm5oaqsWp7eyWZYybP7SMFHIiAJ22ZH5Rp_lXXf3rhmob4Wz88_QKFUVIvNwPuye9bQYwTOTftvKca4=s1600-w800', 1 FROM public.luridi WHERE slug = 'forno-di-barona'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'forno-di-barona') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZPvMa-8UsjTo1p27Y2iD2IJHUowNWPzaSWaYVyy7XiPJNlCxcR3heHUKWNAq6OvQwXtJm5oaqsWp7eyWZYybP7SMFHIiAJ22ZH5Rp_lXXf3rhmob4Wz88_QKFUVIvNwPuye9bQYwTOTftvKca4=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZNrFtSdewoVbYm1efWpEO7iaeqmflFbX4ZMYynkwziIyaDBiYI-KkxdKBTsMkvtPgBV7PvUnahkdKRybaBVKWcZwXUw_CbFGk6E_t9UT50cCmx9E7v4FM1NCZTMcxacT2yH9LPJtILYs_yBfA=s1600-w800', 2 FROM public.luridi WHERE slug = 'forno-di-barona'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'forno-di-barona') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZNrFtSdewoVbYm1efWpEO7iaeqmflFbX4ZMYynkwziIyaDBiYI-KkxdKBTsMkvtPgBV7PvUnahkdKRybaBVKWcZwXUw_CbFGk6E_t9UT50cCmx9E7v4FM1NCZTMcxacT2yH9LPJtILYs_yBfA=s1600-w800');
+
+-- salamellaz
+UPDATE public.luridi SET google_place_id = 'ChIJxQWLWMzBhkcRbC74c2fi3bA' WHERE slug = 'salamellaz' AND (google_place_id IS NULL OR google_place_id = '');
+UPDATE public.luridi SET address = 'Piazzale Angelo Moratti', location = st_makepoint(9.1262847, 45.4797966)::geography WHERE slug = 'salamellaz';
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZMA8EzDY6GKxsaTGh6AW2aCUyU48O-fet_0GJAZBCahoxF0biBv7qMWYdfZ8eLIc2QdJb0LmoLdJK4DMV5QOvYpUcb3SgAedPleEFJRtiMIu6v_En2E8OiYXAtNAItyHFoSDWnRSW33mOhiyDrxGU4ELA=s1600-w800', 0 FROM public.luridi WHERE slug = 'salamellaz'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'salamellaz') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZMA8EzDY6GKxsaTGh6AW2aCUyU48O-fet_0GJAZBCahoxF0biBv7qMWYdfZ8eLIc2QdJb0LmoLdJK4DMV5QOvYpUcb3SgAedPleEFJRtiMIu6v_En2E8OiYXAtNAItyHFoSDWnRSW33mOhiyDrxGU4ELA=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZMtm3N0DxvaPLTWKlEyC21hmdSSXi8-5WxAukvWXu6FweKAp6oxPDvlTgr6lkB3G2srnGY5aivSdIPQS7xr9AuB0_beA_fPFOJt21tmRvvekRYUBxebil3jElXb-1QZpsou9y2As0NXOkvNEFcrUU_QDA=s1600-w800', 1 FROM public.luridi WHERE slug = 'salamellaz'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'salamellaz') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZMtm3N0DxvaPLTWKlEyC21hmdSSXi8-5WxAukvWXu6FweKAp6oxPDvlTgr6lkB3G2srnGY5aivSdIPQS7xr9AuB0_beA_fPFOJt21tmRvvekRYUBxebil3jElXb-1QZpsou9y2As0NXOkvNEFcrUU_QDA=s1600-w800');
+INSERT INTO public.photos (lurido_id, url, sort_order)
+SELECT id, 'https://lh3.googleusercontent.com/place-photos/AJRVUZPP-MEFXIjtLE4xl5zP-aAsMCaag-Ew-qyqN20MoV2dxe8vOJ-SodMlKO6SZpJrYkQsUabtLxN1n7tm4Lt1efRvXHnIL3ZZqxylC5op8jeDWLBlgS4ZKkPvJ7_I04T0nlXgjSN4HjBwlqChDddmNjx6QQ=s1600-w800', 2 FROM public.luridi WHERE slug = 'salamellaz'
+  AND NOT EXISTS (SELECT 1 FROM public.photos p WHERE p.lurido_id = (SELECT id FROM public.luridi WHERE slug = 'salamellaz') AND p.url = 'https://lh3.googleusercontent.com/place-photos/AJRVUZPP-MEFXIjtLE4xl5zP-aAsMCaag-Ew-qyqN20MoV2dxe8vOJ-SodMlKO6SZpJrYkQsUabtLxN1n7tm4Lt1efRvXHnIL3ZZqxylC5op8jeDWLBlgS4ZKkPvJ7_I04T0nlXgjSN4HjBwlqChDddmNjx6QQ=s1600-w800');
