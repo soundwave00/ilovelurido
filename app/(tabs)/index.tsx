@@ -478,7 +478,11 @@ function PreviewCard({
   return (
     <View style={{ flex: 1, paddingHorizontal: 16, gap: 12 }}>
       <View style={{ flexDirection: 'row', gap: 12, alignItems: 'flex-start' }}>
-        <LPhoto uri={undefined} style={{ width: 80, height: 80 }} borderRadius={10} />
+        <LPhoto
+          uri={lurido.coverPhotoUrl ?? (lurido.googlePlaceId === 'NOT_FOUND' ? `https://picsum.photos/seed/${lurido.slug ?? lurido.id}/200/200` : undefined)}
+          style={{ width: 80, height: 80 }}
+          borderRadius={10}
+        />
         <View style={{ flex: 1, gap: 4 }}>
           <Text style={{ fontSize: 18, fontWeight: '700', color: palette.text }} numberOfLines={1}>
             {lurido.name}
@@ -505,6 +509,12 @@ function PreviewCard({
               </Text>
             </View>
           ) : null}
+          {lurido.googlePlaceId === 'NOT_FOUND' && (
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 2 }}>
+              <Text style={{ fontSize: 10 }}>⚠️</Text>
+              <Text style={{ fontSize: 11, color: palette.textMuted }}>Info non verificate</Text>
+            </View>
+          )}
         </View>
       </View>
 
