@@ -57,6 +57,8 @@ export function mapLuridoRow(row: Record<string, unknown>): Lurido {
     updatedAt: row['updated_at'] as string,
     avgRating: (row['avg_rating'] as number | undefined) ?? undefined,
     reviewCount: (row['review_count'] as number | undefined) ?? undefined,
+    coverPhotoUrl: (row['cover_photo_url'] as string | null | undefined) ?? null,
+    googlePlaceId: (row['google_place_id'] as string | null | undefined) ?? null,
   };
 }
 

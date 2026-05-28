@@ -43,6 +43,10 @@ export interface Lurido {
   // Aggregati da `luridi_with_stats`
   avgRating?: number;
   reviewCount?: number;
+  // Prima foto del lurido (da subquery in RPC nearby/search)
+  coverPhotoUrl?: string | null;
+  // Place ID Google Maps (null = non ancora cercato, 'NOT_FOUND' = confermato non su Maps)
+  googlePlaceId?: string | null;
 }
 
 export interface Photo {
