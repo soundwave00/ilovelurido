@@ -34,7 +34,7 @@ export function LStatusBadge({ status, until }: Props) {
   })();
 
   return (
-    <View className="flex-row items-center gap-[6px] px-2 py-1 rounded-full bg-l-surface-alt">
+    <View className="flex-row items-center gap-[6px] px-2 py-1 rounded-full bg-l-surface-alt self-start">
       <View
         className="w-[7px] h-[7px] rounded-full"
         style={{ backgroundColor: dotColor }}

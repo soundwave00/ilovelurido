@@ -54,10 +54,17 @@ const FOOD_CATEGORY_LIST: { cat: FoodCategory; label: string; emoji: string }[] 
 
 const GOOGLE_MAP_STYLE_NIGHT = [
   { elementType: 'geometry', stylers: [{ color: '#0f0a08' }] },
-  { elementType: 'labels.text.fill', stylers: [{ color: '#f5ead8' }] },
+  { elementType: 'labels.text.fill', stylers: [{ color: '#b8a890' }] },
+  { elementType: 'labels.text.stroke', stylers: [{ color: '#0f0a08' }] },
   { featureType: 'road', elementType: 'geometry', stylers: [{ color: '#1e1612' }] },
+  { featureType: 'road', elementType: 'labels.text.fill', stylers: [{ color: '#a09080' }] },
+  { featureType: 'road', elementType: 'labels.text.stroke', stylers: [{ color: '#1e1612' }] },
+  { featureType: 'road.highway', elementType: 'geometry', stylers: [{ color: '#2a1f18' }] },
   { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#0c1418' }] },
+  { featureType: 'water', elementType: 'labels.text.fill', stylers: [{ color: '#4a6070' }] },
   { featureType: 'poi.park', elementType: 'geometry', stylers: [{ color: '#1a1e14' }] },
+  { featureType: 'administrative', elementType: 'labels.text.fill', stylers: [{ color: '#806858' }] },
+  { featureType: 'administrative', elementType: 'labels.text.stroke', stylers: [{ color: '#0f0a08' }] },
   { featureType: 'transit', stylers: [{ visibility: 'off' }] },
   { featureType: 'poi', stylers: [{ visibility: 'simplified' }] },
 ];
@@ -526,11 +533,11 @@ function PreviewCard({
           <Text style={{ fontSize: 18, fontWeight: '700', color: palette.text }} numberOfLines={1}>
             {lurido.name}
           </Text>
+          <LStatusBadge
+            status={open ? 'open' : 'closed'}
+            until={open && closeTime ? closeTime : undefined}
+          />
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-            <LStatusBadge
-              status={open ? 'open' : 'closed'}
-              until={open && closeTime ? closeTime : undefined}
-            />
             {lurido.neighborhood && (
               <Text style={{ fontSize: 12, color: palette.textMuted }}>{lurido.neighborhood}</Text>
             )}
