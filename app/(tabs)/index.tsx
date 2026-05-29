@@ -25,7 +25,7 @@ import { LSkeleton } from '@/components/LSkeleton';
 import { useNearbyLuridi } from '@/hooks/useNearbyLuridi';
 import { useSearch } from '@/hooks/useSearch';
 import { useLocation } from '@/hooks/useLocation';
-import { useFiltersStore } from '@/lib/store/useFiltersStore';
+import { useFiltersStore, type FoodCategory, FOOD_CATEGORY_KEYWORDS } from '@/lib/store/useFiltersStore';
 import { useLuridiUIStore } from '@/lib/store/useLuridiUIStore';
 import { useAuthStore } from '@/lib/store/useAuthStore';
 import { useTheme } from '@/lib/theme/ThemeProvider';
@@ -40,6 +40,17 @@ import { formatDistance, isOpenNow, formatCloseTime } from '@/lib/utils/format';
 import type { Lurido } from '@/types/domain';
 
 const SCREEN_H = Dimensions.get('window').height;
+
+const FOOD_CATEGORY_LIST: { cat: FoodCategory; label: string; emoji: string }[] = [
+  { cat: 'burger',    label: 'Burger',    emoji: '🍔' },
+  { cat: 'panino',    label: 'Panino',    emoji: '🥪' },
+  { cat: 'pizza',     label: 'Pizza',     emoji: '🍕' },
+  { cat: 'salamella', label: 'Salamella', emoji: '🥩' },
+  { cat: 'wurstel',   label: 'Hot dog',   emoji: '🌭' },
+  { cat: 'veggie',    label: 'Veggie',    emoji: '🌿' },
+  { cat: 'birra',     label: 'Birra',     emoji: '🍺' },
+  { cat: 'fritto',    label: 'Fritto',    emoji: '🍟' },
+];
 
 const GOOGLE_MAP_STYLE_NIGHT = [
   { elementType: 'geometry', stylers: [{ color: '#0f0a08' }] },
@@ -120,7 +131,7 @@ export default function MapScreen() {
   const { palette, mode } = useTheme();
   const { profile } = useAuthStore();
   const { selectedLuridoId, setSelectedLuridoId, setMapRegion } = useLuridiUIStore();
-  const { openNow, minStars, veggie, isNew, setOpenNow, setMinStars, setVeggie, setIsNew } =
+  const { openNow, minStars, isNew, foodCategories, setOpenNow, setMinStars, setIsNew, toggleFoodCategory } =
     useFiltersStore();
 
   const [region, setRegion] = useState<Region>(MILANO_REGION);
@@ -168,6 +179,13 @@ export default function MapScreen() {
   const filteredLuridi = baseList.filter((l) => {
     if (openNow && !isOpenNow(l.hours)) return false;
     if (minStars === 4 && (l.avgRating ?? 0) < 4) return false;
+    if (foodCategories.length > 0) {
+      const text = `${l.name} ${l.description ?? ''}`.toLowerCase();
+      const matches = foodCategories.some((cat) =>
+        FOOD_CATEGORY_KEYWORDS[cat].some((kw) => text.includes(kw)),
+      );
+      if (!matches) return false;
+    }
     return true;
   });
 
@@ -401,20 +419,41 @@ export default function MapScreen() {
             top: insets.top + 64,
             left: 0,
             right: 0,
-            paddingHorizontal: 16,
           }}
         >
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ gap: 8 }}>
-            <View style={{ flexDirection: 'row', gap: 8 }}>
-              <LChip label="Aperto ora" active={openNow} onPress={() => setOpenNow(!openNow)} />
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{ paddingHorizontal: 16, gap: 8, alignItems: 'center' }}
+          >
+            {/* Status filters */}
+            <LChip label="🕐 Aperto" active={openNow} onPress={() => setOpenNow(!openNow)} />
+            <LChip
+              label="⭐ 4+"
+              active={minStars === 4}
+              onPress={() => setMinStars(minStars === 4 ? 0 : 4)}
+            />
+            <LChip label="🆕 Nuovi" active={isNew} onPress={() => setIsNew(!isNew)} />
+
+            {/* Divider */}
+            <View
+              style={{
+                width: 1,
+                height: 24,
+                backgroundColor: 'rgba(128,128,128,0.3)',
+                marginHorizontal: 2,
+              }}
+            />
+
+            {/* Food category chips */}
+            {FOOD_CATEGORY_LIST.map(({ cat, label, emoji }) => (
               <LChip
-                label="4+ ⭐"
-                active={minStars === 4}
-                onPress={() => setMinStars(minStars === 4 ? 0 : 4)}
+                key={cat}
+                label={`${emoji} ${label}`}
+                active={foodCategories.includes(cat)}
+                onPress={() => toggleFoodCategory(cat)}
               />
-              <LChip label="Veggie" active={veggie} onPress={() => setVeggie(!veggie)} />
-              <LChip label="Nuovi" active={isNew} onPress={() => setIsNew(!isNew)} />
-            </View>
+            ))}
           </ScrollView>
         </View>
       )}
