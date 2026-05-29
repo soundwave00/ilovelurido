@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import {
   ActivityIndicator,
   Alert,
+  Dimensions,
   FlatList,
   Modal,
+  NativeScrollEvent,
+  NativeSyntheticEvent,
   Pressable,
   ScrollView,
   Share,
@@ -61,6 +64,7 @@ export default function LuridoDetailScreen() {
   const { profile } = useAuthStore();
 
   const [activeTab, setActiveTab] = useState<Tab>('panoramica');
+  const [photoIndex, setPhotoIndex] = useState(0);
   const [reviewSheetOpen, setReviewSheetOpen] = useState(false);
   const [reportSheetOpen, setReportSheetOpen] = useState(false);
   const [addDishOpen, setAddDishOpen] = useState(false);
@@ -87,8 +91,18 @@ export default function LuridoDetailScreen() {
   const isSaved = savedSet?.some((s) => s.luridoId === (id ?? '')) ?? false;
   const open = lurido ? isOpenNow(lurido.hours) : false;
   const closeTime = lurido ? formatCloseTime(lurido.hours) : null;
-  const heroPhoto = photos[0]?.url ??
-    (lurido?.googlePlaceId === 'NOT_FOUND' ? `https://picsum.photos/seed/${lurido.slug ?? lurido.id}/800/600` : undefined);
+  const SCREEN_W = Dimensions.get('window').width;
+  const stockPhoto = lurido?.googlePlaceId === 'NOT_FOUND'
+    ? `https://picsum.photos/seed/${lurido.slug ?? lurido.id}/800/600`
+    : undefined;
+  const displayPhotos: string[] = photos.length > 0
+    ? photos.map((p) => p.url)
+    : stockPhoto ? [stockPhoto] : [];
+
+  const onPhotoScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const idx = Math.round(e.nativeEvent.contentOffset.x / SCREEN_W);
+    setPhotoIndex(idx);
+  };
 
   const onSubmitReview = (data: ReviewForm) => {
     createReview(
@@ -146,10 +160,24 @@ export default function LuridoDetailScreen() {
     <View style={{ flex: 1, backgroundColor: palette.bg }}>
       <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: 32 }} showsVerticalScrollIndicator={false}>
 
-        {/* Hero photo */}
+        {/* Hero photo gallery */}
         <View style={{ height: 260, position: 'relative' }}>
-          <LPhoto uri={heroPhoto} style={{ width: '100%', height: 260 }} borderRadius={0} />
-          <View style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 100, backgroundColor: 'rgba(0,0,0,0.35)' }} pointerEvents="none" />
+          {displayPhotos.length > 0 ? (
+            <ScrollView
+              horizontal
+              pagingEnabled
+              showsHorizontalScrollIndicator={false}
+              onMomentumScrollEnd={onPhotoScroll}
+              scrollEventThrottle={16}
+              style={{ width: SCREEN_W, height: 260 }}
+            >
+              {displayPhotos.map((uri, i) => (
+                <LPhoto key={i} uri={uri} style={{ width: SCREEN_W, height: 260 }} borderRadius={0} />
+              ))}
+            </ScrollView>
+          ) : (
+            <LPhoto uri={undefined} style={{ width: '100%', height: 260 }} borderRadius={0} />
+          )}
           <SafeAreaView
             style={{ position: 'absolute', top: 0, left: 0, right: 0, flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 12, paddingTop: 8 }}
             edges={['top']}
@@ -169,9 +197,16 @@ export default function LuridoDetailScreen() {
               <Bookmark size={20} color="#fff" fill={isSaved ? '#fff' : 'transparent'} strokeWidth={1.8} />
             </Pressable>
           </SafeAreaView>
-          {photos.length > 1 && (
+          {displayPhotos.length > 1 && (
             <View style={{ position: 'absolute', bottom: 10, right: 12, backgroundColor: 'rgba(0,0,0,0.5)', borderRadius: 10, paddingHorizontal: 8, paddingVertical: 4 }}>
-              <Text style={{ color: '#fff', fontSize: 12 }}>1/{photos.length}</Text>
+              <Text style={{ color: '#fff', fontSize: 12 }}>{photoIndex + 1}/{displayPhotos.length}</Text>
+            </View>
+          )}
+          {displayPhotos.length > 1 && (
+            <View style={{ position: 'absolute', bottom: 10, left: 0, right: 0, flexDirection: 'row', justifyContent: 'center', gap: 5 }} pointerEvents="none">
+              {displayPhotos.map((_, i) => (
+                <View key={i} style={{ width: i === photoIndex ? 16 : 6, height: 6, borderRadius: 3, backgroundColor: i === photoIndex ? '#fff' : 'rgba(255,255,255,0.5)' }} />
+              ))}
             </View>
           )}
         </View>
