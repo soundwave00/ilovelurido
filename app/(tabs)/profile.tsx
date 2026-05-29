@@ -28,7 +28,7 @@ import { supabase } from '@/lib/supabase';
 
 export default function ProfileScreen() {
   const { palette, accent, mode, toggleMode, setAccent } = useTheme();
-  const { profile, signOut } = useAuthStore();
+  const { profile, signOut, patchProfile } = useAuthStore();
   const tabBarHeight = useBottomTabBarHeight();
   const insets = useSafeAreaInsets();
   const sheetBottomOffset = tabBarHeight + Math.max(insets.bottom, 12);
@@ -48,26 +48,41 @@ export default function ProfileScreen() {
   const xpProgress = Math.min(xp % 100, 100);
 
   const pickAndUploadAvatar = async () => {
+    console.log('[avatar] start');
+    const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    console.log('[avatar] permission status:', status);
+    if (status !== 'granted') {
+      Alert.alert('Permesso negato', 'Consenti accesso alla libreria foto nelle impostazioni.');
+      return;
+    }
     const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      mediaTypes: ['images'],
       quality: 0.9,
       allowsEditing: true,
       aspect: [1, 1],
     });
+    console.log('[avatar] picker result canceled:', result.canceled, 'assets:', result.assets?.length);
     if (result.canceled || !userId) return;
     const asset = result.assets[0];
+    console.log('[avatar] asset uri:', asset?.uri);
     if (!asset) return;
 
     setUploadingAvatar(true);
     try {
+      console.log('[avatar] uploading...');
       const url = await uploadImage(asset.uri, 'avatars', `${userId}/avatar.jpg`);
+      console.log('[avatar] uploaded url:', url);
       const { error } = await supabase
         .from('profiles')
         .update({ avatar_url: url })
         .eq('id', userId);
+      console.log('[avatar] db update error:', error);
       if (error) throw error;
-    } catch {
-      Alert.alert('Errore', 'Impossibile aggiornare la foto profilo.');
+      patchProfile({ avatarUrl: url });
+      console.log('[avatar] done');
+    } catch (e) {
+      console.error('[avatar] error:', e);
+      Alert.alert('Errore', String(e instanceof Error ? e.message : e));
     } finally {
       setUploadingAvatar(false);
     }

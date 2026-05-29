@@ -11,6 +11,7 @@ type AuthState = {
   initializing: boolean;
 
   hydrate: () => Promise<void>;
+  patchProfile: (patch: Partial<Profile>) => void;
   signInWithPassword: (email: string, password: string) => Promise<void>;
   signUpWithPassword: (email: string, password: string, username: string) => Promise<void>;
   signOut: () => Promise<void>;
@@ -35,7 +36,21 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   hydrate: async () => {
     const { data } = await supabase.auth.getSession();
     const session = data.session;
-    const profile = session ? await loadProfile(session.user.id) : null;
+    let profile: Profile | null = null;
+    if (session) {
+      profile = await loadProfile(session.user.id);
+      if (!profile) {
+        const username =
+          (session.user.user_metadata?.username as string | undefined) ??
+          session.user.email?.split('@')[0] ??
+          'user';
+        await supabase
+          .from('profiles')
+          .upsert({ id: session.user.id, username })
+          .eq('id', session.user.id);
+        profile = await loadProfile(session.user.id);
+      }
+    }
     set({ session, profile, initializing: false });
 
     // Subscribe to future changes (login/logout/token refresh)
@@ -53,6 +68,9 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       set({ session: nextSession, profile: nextProfile });
     });
   },
+
+  patchProfile: (patch) =>
+    set((s) => ({ profile: s.profile ? { ...s.profile, ...patch } : s.profile })),
 
   signInWithPassword: async (email, password) => {
     const { error } = await supabase.auth.signInWithPassword({ email, password });
